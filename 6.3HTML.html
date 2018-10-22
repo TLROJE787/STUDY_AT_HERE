@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #div1{
+     height:60px ;
+     width:400px;
+     background-color:red;
+     display: block;
+     margin: 0 auto;
+     position: relative;
+     top:300px;
+    }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+
+    <script>
+    var oDiv1=document.getElementById('div1');
+    var inter;
+    var thisWidth = 0;
+    var thisTop =0;
+    var inte=80;
+    var funcDiv1;
+
+   function forDiv(e){
+       var that=this;
+    e.onclick=function(){
+     //inte=80;
+       clearInterval(inter);     
+        inter=self.setInterval(function(){add(e);},10);
+        //function(){ trans(msObj); },
+    }
+
+    e.onmouseout=function(){
+        clearInterval(inter);     
+       inter=setInterval(function(){del(e);},10);
+    }
+
+    e.onmouseover=function(){
+        clearInterval(inter);     
+    }
+
+    }
+    
+    //test
+   /* function forDiv(e){
+       // e.onclick=function(){
+            console.log(e);
+            //alert('hello world');
+      //  }
+       
+       this.onclick=function(){
+        alert('hello world');
+       }
+    }*/
+funcDiv1=forDiv(oDiv1);
+
+function add(e){  
+thisWidth=e.offsetWidth;//get   this.style.width  set
+e.style.width=thisWidth+1+'px';
+//console.log('hello world!'+this);
+}
+
+function del(e){
+thisWidth=e.offsetWidth;//get   this.style.width  set
+e.style.width=thisWidth-1+'px';
+//inte++;
+//e.style.backgroundColor='#'+inte;
+if(thisWidth==0){
+    thisWidth=200;
+    e.style.width=thisWidth-1+'px';
+}
+}
+    </script>
+</body>
+</html>
