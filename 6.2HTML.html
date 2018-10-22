@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .bian{
+        background-color: #aaa;
+        width: 170px;
+        height: 150px;
+        top: 50%;
+        left: 50%;
+        text-align: center;
+        display: inline-block;
+        position: absolute;  
+    }
+    
+
+    .num{
+        position: absolute;
+        top:10px;
+        left:45%;  
+    }
+    #star1{
+display: inline;
+    }
+    #star2{
+display:none;
+    }
+    .but{
+        position: absolute;
+      top:100px;
+    }
+    </style>
+</head>
+<body>
+    <div class="bian">
+        <h1 id="h1">100</h1>
+        
+        <button class="but" id="star1">开始</button>
+        <button class="but" id="star2">暂停</button>
+    </div>
+    <div class="num">
+    <script>
+            var bol='1';
+            var inter;
+            var i=100;
+          //  document.write(i+"</br>");
+        var oStar1=document.getElementById("star1");
+        var oStar2=document.getElementById("star2");
+        var th1=document.getElementById('h1');
+       oStar1.onclick=function(){
+           //oStar1.innerText='暂停';
+           if(this.innerText=='暂停'){
+               this.innerText='开始';
+             
+               clearInterval(inter);
+           }
+           else if(this.innerText=='开始'){
+               this.innerText='暂停';
+               inter=self.setInterval("run()",10);
+           }
+           console.log('ostar1');
+           //oStar1.style.display="none";
+           //oStar2.style.display="none";
+           //oStar2.style.display="inline";
+
+           }
+       oStar2.onclick=function(){
+          // oStar1.style.display="none";
+          // oStar2.style.display="none";
+          // oStar1.style.display="inline";
+          // clearInterval(inter);
+          }
+           function run(){
+               i--;
+               th1.innerHTML=i;
+               console.log(i);
+           }
+           window.onresize=function(){
+            // document.documentElement.getBoundingClientRect()
+        console.log( document.documentElement.getBoundingClientRect());
+           
+        }
+        </script>
+        </div>
+</body>
+
+</html>
