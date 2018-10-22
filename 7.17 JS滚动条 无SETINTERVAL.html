@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        position: absolute;
+        top: 0px;
+        left: 0px;      
+    }
+    #box2
+    {
+        
+        width: 0px;
+        height: 20px;
+        background-color: blueviolet;
+    }
+    #box1
+    {
+        width: 200px;
+        height: 20px;
+        overflow: hidden;
+        background-color: blue;
+        border-radius:20px/40px; 
+    }
+    #but1
+    {
+        margin-top: 20px;
+    }
+    </style>
+</head>
+<body>
+    <div id="box1">
+            <div id="box2">
+                
+            </div>
+    </div>
+
+    <button id="but1">
+     开始
+    </button>
+    <script>
+    var Obut1=document.getElementById("but1");
+    var Odiv1=document.getElementById("box1");
+    var Odiv2=document.getElementById("box2");
+    var inter;
+
+     var len=0;
+     var lan=0;
+    Obut1.onclick=function()
+    {
+       lan++; 
+       len=0; 
+       requestAnimationFrame(lena);
+    }
+    function lena()
+    {
+        if(lan>=1)
+        {
+            Obut1.onclick=false;
+        }
+        len++;
+        if(len==201)
+        {
+            Obut1.onclick=function()
+    {
+       lan++; 
+       len=0; 
+       requestAnimationFrame(lena);
+    }
+            return 0;
+
+        }
+        Odiv2.style.width=len+'px';
+        console.log(len);
+        console.log(lan);
+        Odiv2.innerText=Math.floor(len/2)+'%';
+        requestAnimationFrame(lena);
+    }
+    </script>
+</body>
+</html>
