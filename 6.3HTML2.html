@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #div1{
+     height:60px ;
+     width:400px;
+     background-color:red;
+     display: block;
+     position: relative;
+     top:100px;
+    }
+    #div2{
+     height:60px ;
+     width:400px;
+     background-color:red;
+     display: block;
+     position: relative;
+     top:200px;
+    }
+    #div3{
+     height:60px ;
+     width:400px;
+     background-color:red;
+     display: block;
+     position: relative;
+     top:300px;
+    }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+</body>
+<script>
+    //ID获取对象
+    var oDiv1=document.getElementById('div1');
+    var oDiv2=document.getElementById('div2');
+    var oDiv3=document.getElementById('div3');
+    //声明定义变量
+    var inter=[];var forInter=0;
+    var thisWidth = 0;
+    var thisTop =0;
+    var inte=80;
+    var funcDiv1;
+    var funcDiv2;
+    var funcDiv3;
+    var funcWhatDiv;
+   //封装函数forDiv 包含onclick onmouseout onmouseover对应操作
+   function forDiv(e,forInte){
+    //   var that=this;
+    clearInterval(inter[forInte]);     
+    inter[forInte]=setInterval(function(){del(e);},10);
+
+    e.onclick=function(){
+     //inte=80;
+       clearInterval(inter[forInte]);     
+       inter[forInte]=self.setInterval(function(){add(e);},10);
+    }
+    e.onmouseout=function(){
+        clearInterval(inter[forInte]);     
+        inter[forInte]=setInterval(function(){del(e);},10);
+    }
+    e.onmouseover=function(){
+        clearInterval(inter[forInte]);     
+    }
+
+function add(e){  
+thisWidth=e.offsetWidth;//get   this.style.width  set
+e.style.width=thisWidth+1+'px';
+//console.log('hello world!'+this);
+}
+
+function del(e){
+thisWidth=e.offsetWidth;//get   this.style.width  set
+e.style.width=thisWidth-1+'px';
+//inte++;
+//e.style.backgroundColor='#'+inte;
+if(thisWidth==0){
+    thisWidth=200;
+    e.style.width=thisWidth-1+'px';
+}
+}
+
+    }
+//激活oDiv1 oDiv2 oDiv3    
+funcWhatDiv=whatDiv();
+function whatDiv(){
+forDiv(oDiv1,0);
+forDiv(oDiv2,1);
+forDiv(oDiv3,2);
+}
+
+//
+
+</script>
+</html>
