@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #sao{
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #000;
+            top:0px;
+            left: 0px;
+        }
+        #sao2{
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #117;
+            top:70px;
+            left: 85px;
+            display: block;
+        }
+        #sao1{
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #000;
+            top:0px;
+            left: 0px;
+            display: none;
+        }
+        li{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        
+        }
+        img{
+        padding:30px; 
+        height: 140px;
+        width:140px;
+        }
+        #li1 img{
+            position: absolute;
+        height: 300px;
+        width:404px;
+        top:150px;
+        left: 200px;
+        }
+    #li1{
+        height: 600px;
+        width:804px;
+      border: 1px solid #aaa;
+        display: block;
+        background-color: #fff;
+    }
+    #li2{
+        height: 200px;
+        width:200px;
+        border-left: 1px solid #aaa;
+        border-bottom: 1px solid #aaa;
+        display: inline-block;
+        background-color: #fff;
+    }
+    #li3{
+        height: 200px;
+        width:200px;
+        border-left: 1px solid #aaa;
+        border-bottom: 1px solid #aaa;
+        display: inline-block;
+        background-color: #fff;
+    }
+    #li4{
+        height: 200px;
+        width:200px;
+        border-left: 1px solid #aaa;
+        border-bottom: 1px solid #aaa;
+        display: inline-block;
+        background-color: #fff;
+    }
+    #li5{
+        height: 200px;
+        width:200px;
+
+        border-right: 1px solid #aaa;
+        border-left: 1px solid #aaa;
+        border-bottom: 1px solid #aaa;
+        display: inline-block;
+        
+        background-color: #fff;
+    }
+    #ul1{
+        top: 50px;
+        font-size: 0;
+        position: absolute;
+        display: inline-block;
+        background-color: aqua;
+        padding: 0;
+        margin: 0;
+        left: 30%;
+    }
+    #divs1{
+     text-align: center;
+     line-height: 50px;
+     font-size:30px ;
+     width:100px ;
+     height: 50px;
+     position: absolute;
+     top: 600px;
+     left:30% ;
+     background-color: #aaa;
+     border-radius: 10%;
+    }
+    #divx1{
+      text-align: center;
+      line-height: 50px;
+      font-size:30px ;
+      width:100px ;
+      height: 50px;
+      position: absolute;
+      top:600px;
+      left:67.5%;
+      background-color: #aaa;
+      border-radius: 10%;
+    }
+    </style>
+</head>
+<body>
+    <ul id='ul1'>
+       
+        <li id="li1">
+            <img id="img1" src="C:\Users\Administrator\Desktop\ALL\PICTURE\IMG_20180601_085402.jpg">
+            <!--img id="img2" src="C:\Users\Administrator\Desktop\ALL\PICTURE\IMG_20180601_085402.jpg">
+            <img id="img3" src="C:\Users\Administrator\Desktop\ALL\PICTURE\R(Z03TZ]JJEC()}0C$H~9W5.png">
+            <img id="img4" src="C:\Users\Administrator\Desktop\ALL\PICTURE\KAO`T_0A24$9SI4~X2UQSZG.png"-->
+        
+        
+        
+        
+        
+        
+        </li>
+        <li id="li2">2<img id="img2" class='imgx' src="C:\Users\Administrator\Desktop\ALL\PICTURE\IMG_20180601_085402.jpg"></li>
+        <li id="li3">3<img id="img3" class='imgx' src="C:\Users\Administrator\Desktop\ALL\PICTURE\R(Z03TZ]JJEC()}0C$H~9W5.png"></li>
+        <li id="li4">4<img id="img4" class='imgx' src="C:\Users\Administrator\Desktop\ALL\PICTURE\KAO`T_0A24$9SI4~X2UQSZG.png"></li>
+        <li id="li5">5<img id="img5" class='imgx' src="C:\Users\Administrator\Desktop\ALL\PICTURE\K88(B$K1JQI8L$WX$24_@QV.png"></li>
+
+
+    </ul>
+
+    <div id="divs1">上</div>
+    <div id="divx1">下</div>
+
+    <div id="sao"></div>
+    <div id='sao1'></div>
+    <div id='sao2'></div>
+    <script>
+    //for game
+    oDivSao=document.getElementById('sao');
+    oDivSao1=document.getElementById('sao1');
+    oDivSao2=document.getElementById('sao2');
+    var oTop=0;
+    var oLeft=0;
+    var interw;
+    var inters;
+    var intera;
+    var interd;
+    var interj;
+    var func;
+    var nLeft;
+    function k87(){
+        //w
+        oTop-=10;
+        oDivSao.style.top=oTop+'px';
+        //console.log(oLeft,oTop);
+        //console.log(oDivSao.style.top);
+    }
+    function k83(){
+        //s
+        
+        oTop+=10;
+        oDivSao.style.top=oTop+'px';
+       // console.log(oLeft,oTop);
+    }
+    function k65(){
+        //a
+        oLeft-=10;
+        oDivSao.style.left=oLeft+'px';
+      //  console.log(oLeft,oTop);
+    }
+    function k68(){
+        //d
+        oLeft+=10;
+        oDivSao.style.left=oLeft+'px';
+       // console.log(oLeft,oTop);
+    }
+    function k74(){
+        //var nLeft=oLeft;
+        nLeft+=10;
+        oDivSao1.style.left=nLeft+'px';
+        if(     nLeft== 70||oTop==85){
+           oDivSao2.style.display="none";
+         //  alert(oDivSao1.style.left,oDivSao1.style.top,oDivSao2.style.left,oDivSao2.style.top);
+     }
+
+    }
+    document.onkeydown=function(event){
+        if(event.keyCode==87){
+       
+       // console.log(oDiva.style);
+       inter='';
+       clearInterval(intera);
+       clearInterval(interw);
+       clearInterval(inters);
+       clearInterval(interd);
+       interw=self.setInterval('k87()',50);
+       //oTop-=10;
+       //oDiva.style.top=oTop+'px';
+       
+    }
+    if(event.keyCode==83){
+       // console.log(oDiva.style);
+       inter='';
+       clearInterval(intera);
+       clearInterval(interw);
+       clearInterval(inters);
+       clearInterval(interd);
+       inters=self.setInterval('k83()',50);
+       //oTop+=10;
+       //oDiva.style.top=oTop+'px';
+    }
+    if(event.keyCode==65){
+       // console.log(oDiva.style);
+       inter='';
+       clearInterval(intera);
+       clearInterval(interw);
+       clearInterval(inters);
+       clearInterval(interd);
+       intera=self.setInterval('k65()',50);
+       //oLeft-=10;
+       //oDiva.style.left=oLeft+'px';
+    }
+    if(event.keyCode==68){
+       // console.log(oDiva.style);
+       inter='';
+       clearInterval(intera);
+       clearInterval(interw);
+       clearInterval(inters);
+       clearInterval(interd);
+       interd=self.setInterval('k68()',50);
+       //oLeft+=10;
+       //oDiva.style.left=oLeft+'px';
+    }
+    if(event.keyCode==74){
+     oDivSao1.style.display='block';
+     oDivSao1.style.left=oDivSao.style.left;
+     oDivSao1.style.top=oDivSao.style.top;
+     nLeft=oLeft;
+ 
+     interj=self.setInterval('k74()',50);
+    }
+    }
+    //for class
+    var ind=0;
+    var oImg1=document.getElementById('img1');
+    var oImg2=document.getElementById('img2');
+    var oImg3=document.getElementById('img3');
+    var oImg4=document.getElementById('img4');
+    var oImg5=document.getElementById('img5');
+
+    var aImgx=document.getElementsByClassName('imgx');
+    
+    var oDivs1=document.getElementById('divs1');
+    var oDivx1=document.getElementById('divx1');
+    oImg2.onmouseover=function(){
+       // alert(this.src);
+       oImg1.src=this.src;
+      
+    }
+    oImg3.onmouseover=function(){
+       // alert('hello world!');
+       oImg1.src=this.src;
+    }
+    oImg4.onmouseover=function(){
+       // alert('hello world!');
+       oImg1.src=this.src;
+    }
+    oImg5.onmouseover=function(){
+       // alert('hello world!');
+       oImg1.src=this.src;
+    }
+    oDivs1.onclick=function(){
+      if(ind<=0){ind=1}
+      else{
+      oImg1.src=aImgx[--ind].src;
+      console.log(ind);
+      }
+    }
+    oDivx1.onclick=function(){
+        
+       if(ind>=3){ind=2}
+        else{
+        oImg1.src=aImgx[++ind].src;
+        console.log(ind);
+        }
+    }
+    </script>
+</body>
+</html>
