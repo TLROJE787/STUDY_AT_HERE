@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *
+        {
+            margin:0;
+            padding: 0;
+            border: 0;
+        }
+    li
+    {
+         width: 2px;
+         height: 10px;
+         background-color: black;
+         list-style-type: none;
+         position: absolute;
+         top: -1px;
+         transform: rotate(0deg);
+         transform-origin: center 250px; 
+
+    }
+    li:nth-child(5n+1)
+    {
+        width: 2px;
+        height: 19px;
+    }
+    ul
+    {
+       border: 1px solid #000;
+       border-radius: 50%;
+       width: 500px;
+       height: 500px;
+       display: flex;
+       box-sizing: border-box; 
+       justify-content: center;
+       align-items: center;
+       position: absolute;
+    }
+    body,html
+    {
+        justify-content: center;
+        align-items: center;
+        display: flex; 
+        width: 100%;
+        height: 100%;
+        
+    }
+    li:nth-child(61)
+    {
+        width: 2px;
+        height: 50px;
+        background-color: #aaa;
+        z-index: 3;
+        position: absolute;
+        top: 50%;
+        transform: rotate(180deg);
+        transform-origin: center 0px;
+        
+    }
+    li:nth-child(62)
+    {
+
+        width: 3px;
+        height: 100px;
+        background-color: blue;
+        z-index: 2;
+        position: absolute;
+        top: 50%;
+        transform: rotate(180deg);
+        transform-origin: center 0px;
+    }
+    li:nth-child(63)
+    {
+
+        width: 4px;
+        height: 150px;
+        background-color: red;
+        z-index: 1;
+        position: absolute;
+        top: 50%;
+        transform: rotate(180deg);
+        transform-origin: center 0px;
+    }
+    #box1
+    {
+       box-sizing: border-box; 
+       border: #000 1px dashed;
+       width: 500PX;
+       height: 500PX;
+    }
+    </style>
+</head>
+<body>
+    <div id="box1">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<script>
+    var oli=document.getElementsByTagName('li');
+    var oul=document.getElementsByTagName('ul');
+    oul[0].style.transform='rotate('+180+'deg)';
+    //var oli=document.getElementsByTagNameNS('li');
+    var i;
+    var temp=0;
+
+    for(i=0;i<60;i++)
+    {
+        temp=6*i;
+        //temp=0;
+        //oli[i].style.transform='rotate('+temp+'deg)';
+        oli[i].style.transform='rotate('+6*i+'deg)';
+        temp=0;
+        //console.log(temp,i,6*i);
+
+    }
+    var odate=new Date();
+
+    //console.log(hour,minu,sec)
+    var hour= odate.getHours();
+    var minu=odate.getMinutes();
+    var sec=odate.getSeconds();
+    var temp1=sec;
+    var temp2=minu;
+    var temp3=hour;
+    oli[60].style.transform='rotate('+temp3*6+'deg)';
+    oli[61].style.transform='rotate('+temp2*6+'deg)';
+    oli[62].style.transform='rotate('+temp1*6+'deg)';
+    var inter=self.setInterval('run()',1000);
+    function run()
+    { 
+        temp1++;
+        if(temp1==60)
+        {
+            temp2++;
+            oli[61].style.transform='rotate('+temp2*6+'deg)';
+            temp1=0;
+            if(temp2==60)
+        {
+            temp3++;
+            oli[60].style.transform='rotate('+temp3*6+'deg)';
+            temp2=0;
+            if(temp3==60)
+            {
+                temp3=0;
+            }
+        }
+        }
+        oli[62].style.transform='rotate('+temp1*6+'deg)';
+        
+        console.log(temp1,temp2,temp3);
+    }
+    
+    </script>
+</body>
+</html>
