@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    #box1
+    {
+        width: 300px;
+        height: 700px;
+        border: 1px solid #aaa;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    #box2
+    {
+        width: 300px;
+        height: 700px;
+        border: 1px solid #aaa;
+        position: absolute;
+        top: 0;
+        left: 400px;
+    }
+    #but11
+    {
+        width: 300px;
+        height: 50px;
+        background-color: aqua;
+        position: absolute;
+        top: 710px;
+        left: 0;
+    }
+    #but12
+    {
+        width: 300px;
+        height: 50px;
+        background-color: rgb(230, 33, 115);
+        position: absolute;
+        top: 770px;
+        left: 0;
+    }
+    #but21
+    {
+        width: 300px;
+        height: 50px;
+        background-color: rgb(30, 173, 118);
+        position: absolute;
+        top: 710px;
+        left: 400px;
+    }
+    #but22
+    {
+        width: 300px;
+        height: 50px;
+        background-color: rgb(115, 60, 216);
+        position: absolute;
+        top: 770px;
+        left: 400px;
+    }
+    #sel1
+    {
+        width: 100%;
+        height: 100%;
+    }
+    #sel2
+    {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<body>
+    <div id="box1">
+        <select name="" id="sel1" multiple>
+             <option value="1">1</option>
+             <option value="2">2</option>
+             <option value="3">3</option>
+             <option value="4">4</option>
+             <option value="5">5</option>
+             <option value="6">6</option>
+             <option value="7">7</option>
+             <option value="8">8</option>
+        </select>
+    </div>
+    <div id="box2">
+            <select name="" id="sel2" multiple>
+
+            </select>
+    </div>
+    <div id="but11">1>></div>
+    <div id="but12">all>></div>
+    <div id="but21">←1</div>
+    <div id="but22">←all</div>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+    // $('#but11').on("click",function()
+    // {
+    //     alert('click');
+    // })
+
+    $("#sel1").change(function()
+    {
+        $("#sel1 option:selected").each(function()
+        {
+            // alert($(this).text());
+            var that='';
+             that=$(this)
+            $('#but11').on("click",function()
+    {
+        // alert('click'+that.text());
+        that.appendTo("#sel2")
+    })
+
+        })
+    })
+
+    $('#but12').on("click",function()
+    {
+        // alert('click'+that.text());
+        $('#sel1 option').appendTo("#sel2")
+    })
+
+        $("#sel2").change(function()
+    {
+        $("#sel2 option:selected").each(function()
+        {
+            // alert($(this).text());
+            var that2='';
+             that2=$(this)
+            $('#but21').on("click",function()
+    {
+        // alert('click'+that.text());
+        that2.appendTo("#sel1")
+    })
+  u
+        })
+    })
+
+        $('#but22').on("click",function()
+    {
+        // alert('click'+that.text());
+        $('#sel2 option').appendTo("#sel1")
+    })
+    //双击
+    $('#sel1 option').on("dblclick",function()
+    {
+         $(this).appendTo("#sel2")
+        // alert('hello');
+    })
+
+    </script>
+</body>
+</html>
