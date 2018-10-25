@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+    #td1
+    {
+        position: absolute;
+        left: 100px;
+        top: 0;
+    }
+    #td2
+    {
+        position: absolute;
+        left: 300px;
+        top: 0;
+    }
+    #td3
+    {
+        position: absolute;
+        left: 500px;
+        top: 0;
+    }
+    hr
+    {
+        width: 600px;
+        position: absolute;
+        left: 0;
+        top: 30px;
+    }
+
+    ul li
+    {
+        list-style-type: none;
+    }
+    #li1 #ul11 li
+    {
+      display: inline-block;
+    }
+    #li2 #ul21 li
+    {
+      display: inline-block;
+    }
+    #li3 #ul31 li
+    {
+      display: inline-block;
+    }
+</style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td id="td1">姓名</td>
+            <td id="td2">性别</td>
+            <td id="td3">暂住地</td>
+        </tr>
+    </table>
+    <hr/>
+    <ul id="ul1">
+        <li id="li1">1
+            <ul id="ul11">
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+            </ul>
+        </li>
+        <li id="li2">2
+                <ul id="ul21">
+                        <li>21</li>
+                        <li>22</li>
+                        <li>23</li>
+                    </ul>
+        </li>
+        <li id="li3">3
+                <ul id="ul31">
+                        <li>31</li>
+                        <li>32</li>
+                        <li>33</li>
+                    </ul>
+    </ul>
+<script src="jquery-3.3.1.js"></script>
+<script>
+$('#ul1 li').filter(':even').css("background-color",'red');
+</script>
+</body>
+</html>
