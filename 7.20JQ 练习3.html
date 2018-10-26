@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *
+    {
+        padding: 0;
+        margin: 0;
+    }
+    #ul1 li
+    {
+        float: left;
+        list-style: none;
+        margin-left: 100px;
+        font-size:large;
+    }
+
+    #ul2 li:nth-child(1)
+    {
+        list-style: none;
+        background-color: yellow;
+        clear: both;
+        width: 50%;
+        
+    }
+    #ul2 li:nth-child(2),#ul2 li:nth-child(3),#ul2 li:nth-child(4)
+    {
+        float: left;
+        list-style: none;
+        margin-left: 100px;
+    }
+    #ul2 li:nth-child(6),#ul2 li:nth-child(7),#ul2 li:nth-child(8)
+    {
+        float: left;
+        list-style: none;
+        margin-left: 100px;
+    }
+    #ul2 li:nth-child(7)
+    {
+        /* color: red; */
+    }
+    #br1
+    {
+        display: block;
+    }
+    #ul3 li:nth-child(1)
+    {
+        
+        list-style: none;
+        background-color: yellow;
+        clear: both;
+        width: 50%;
+    }
+    #ul3 li:nth-child(2),#ul3 li:nth-child(3),#ul3 li:nth-child(4)
+    {
+        float: left;
+        list-style: none;
+        margin-left: 100px;
+    }
+    #ul3 li:nth-child(6),#ul3 li:nth-child(7),#ul3 li:nth-child(8)
+    {
+        float: left;
+        list-style: none;
+        margin-left: 100px;
+    }
+    #ul3 li:nth-child(7)
+    {
+        /* color: red; */
+    }
+
+        #ul4 li:nth-child(1)
+    {
+        
+        list-style: none;
+        background-color: yellow;
+        clear: both;
+        width: 50%;
+    }
+    #ul4 li:nth-child(2),#ul4 li:nth-child(3),#ul4 li:nth-child(4)
+    {
+        float: left;
+        list-style: none;
+        margin-left: 100px;
+    }
+    #ul4 li:nth-child(6),#ul4 li:nth-child(7),#ul4 li:nth-child(8)
+    {
+        float: left;
+        list-style: none;
+        margin-left: 100px;
+    }
+    #ul4 li:nth-child(7)
+    {
+        /* color: red; */
+    }
+    .none{
+        display: none;
+    }
+    .rred{
+        background-color: red !important;
+    }
+    </style>
+</head>
+<body>
+    <ul id="ul1">
+        <li>姓名</li>
+        <li>性别</li>
+        <li>暂住地</li>
+    </ul>
+<br><br>
+<hr style="width:50%;"align="left">
+
+
+
+<ul id="ul2">
+    <li>前台设计组</li>
+
+    <li>张三</li>
+    <li>男</li>
+    <li>131</li>
+<br>
+    <li>李四</li>
+    <li>女</li>
+    <li>132</li>
+</ul>
+
+
+
+<ul id="ul3">
+        <li>20</li>
+
+        <li>211</li>
+        <li>221</li>
+        <li>231</li>
+    <br>
+        <li>212</li>
+        <li>222</li>
+        <li>232</li>
+    </ul>
+
+
+
+    <ul id="ul4">
+            <li>30</li>
+         
+            <li>311</li>
+            <li>321</li>
+            <li>331</li>
+        <br>
+            <li>312</li>
+            <li>322</li>
+            <li>332</li>
+        </ul>
+        <script src="jquery-3.3.1.js"></script>
+        <script>
+            $('#ul2 li:eq(0),#ul3 li:eq(0),#ul4 li:eq(0)').on('click',function()
+            {
+                $(this).toggleClass('rred').siblings().toggleClass("none");
+                // $(this).siblings().toggleClass("none");
+                // $('#ul2 li:eq(0)').hide=false;
+                // console.log($('#ul2 li').hide());
+            })
+            
+        </script>
+</body>
+</html>
