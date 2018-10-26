@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>个人基本信息</legend>
+    <!-- sfdsf -->
+    名称: <input type="text" style="margin-top:5px;" id="in1" value="姓名" defaluteValue="name"><br>
+    密码: <input type="password" style="margin-top:5px;" id="in2" value="密码"><br>
+    详细信息: <textarea name=""  cols="30" rows="3" style="margin-top:5px;" id="in3" >详细信息</textarea>
+    </fieldset>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        // this.defaulteValue
+        // blur  $(this).attr    
+        
+        $('#in1,#in2,#in3').focus(function()
+        {
+            if($('#in1')[0].value=='姓名'){
+                $(this)[0].value='';
+            // $('#in2')[0].value='密码';
+            // $('#in3')[0].value='详细信息';
+            console.log(this);
+            }
+            if($('#in2')[0].value=='密码'){
+                $(this)[0].value='';
+            // $('#in2')[0].value='密码';
+            // $('#in3')[0].value='详细信息';
+            }
+            if($('#in3')[0].value=='详细信息'){
+                $(this)[0].value='';
+            // $('#in2')[0].value='密码';
+            // $('#in3')[0].value='详细信息';
+            }
+            $('#in1').css("background-color","");
+            $('#in2').css("background-color","");
+            $('#in3').css("background-color","");
+            $(this).css("background-color","red");
+            // $('#in1')[0].value=$('#in1'). attr;
+            // $('#in1').value()   
+
+            //console.log($('#in1')[0]);
+            // console.log($('#in1')[0]);        
+        })
+        $('#in1,#in2,#in3').blur(function()
+        {
+            if($('#in1')[0].value==''){
+            $('#in1')[0].value='姓名';
+            // $('#in2')[0].value='密码';
+            // $('#in3')[0].value='详细信息';
+            }
+            if($('#in2')[0].value==''){
+            // $('#in1')[0].value='姓名';
+            $('#in2')[0].value='密码';
+            //$('#in3')[0].value='详细信息';
+            }
+            if($('#in3')[0].value==''){
+            // $('#in1')[0].value='姓名';
+            // $('#in2')[0].value='密码';
+            $('#in3')[0].value='详细信息';
+            }
+        })
+        // $('#in2').focus(function()
+        // {
+        //     $('#in1').css("background-color","");
+        //     $('#in2').css("background-color","");
+        //     $('#in3').css("background-color","");
+        //     $('#in2').css("background-color","red");            
+        // })
+        // $('#in3').focus(function()
+        // {
+        //     $('#in1').css("background-color","");
+        //     $('#in2').css("background-color","");
+        //     $('#in3').css("background-color","");
+        //     $('#in3').css("background-color","red");            
+        // })
+        // $('#in3').on("click",function()
+        // {
+        //     $('#in1').css("background-color","");
+        //     $('#in2').css("background-color","");
+        //     $('#in3').css("background-color","");
+        //     $('#in3').css("background-color","red");            
+        // })
+
+    </script>
+</body>
+</html>
