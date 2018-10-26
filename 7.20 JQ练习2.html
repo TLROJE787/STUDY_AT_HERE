@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+    *
+    {
+        margin: 0;
+        border: 0;
+        padding: 0;
+    }
+    #ul1 li
+    {
+        list-style: none;
+        float: left;
+        margin-left: 20px;
+    }
+    #ul1 li:nth-child(1)
+    {
+        width: 100px;
+        height: 30px;
+        background-color: aquamarine;
+    }
+    #ul1 li:nth-child(2)
+    {
+        width: 100px;
+        height: 30px;
+        background-color: aquamarine;
+    }
+    #tex1
+    {
+        width: 500px;
+        height: 300px;
+        border: 1px black dashed;
+        display: block;
+    }
+</style>
+</head>
+<body>
+    <ul id="ul1">
+        <li>放大</li>
+        <li>缩小</li>
+    </ul>
+    <br>
+    <br>
+    <textarea id="tex1">
+
+    </textarea>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        // $('#ul1 li:eq(0)').css('background-color','black');
+        var temph=$('#tex1').height();
+        $('#ul1 li:eq(0)').on("click",function()
+        {
+            // $('#tex1').css('height',)
+            // $('#tex1').css('height');
+            // console.log($('#tex1').height());
+
+            if(temph<=300){
+            temph=temph+100;
+            $('#tex1').height(temph);
+            }
+        })
+        $('#ul1 li:eq(1)').on("click",function()
+        {
+            // $('#tex1').css('height',)
+            // $('#tex1').css('height');
+            // console.log($('#tex1').height());
+
+            if(200<=temph){
+            temph=temph-100;
+            $('#tex1').height(temph);
+            }
+        })
+    </script>
+</body>
+</html>
