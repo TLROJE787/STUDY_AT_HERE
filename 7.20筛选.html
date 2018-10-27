@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+table
+{
+    width: 500px;
+    /* border: 1px solid black; */
+    
+}
+#tab1
+{
+    border-bottom: 1px solid #000000;
+}
+#tr1 td
+{
+    
+}
+.red
+{
+    background-color: red !important;
+}
+.is-none
+{
+    display: none;
+}
+.is-show
+{
+
+}
+</style>
+<body>
+    <br><br>
+    筛选: <input type="text" id="in1">
+    <table id="tab1">
+        <thead>
+             <tr id="tr1">
+             <td>1</td>
+             <td>2</td>
+             <td>3</td>
+            </tr>
+        </thead>
+
+    </table>
+    <!-- <hr> -->
+    <table>
+        <tbody>
+                <tr id="tr2">
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                       </tr>
+                       <tr id="tr3">
+                            <td>21</td>
+                            <td>22</td>
+                            <td>23</td>
+                           </tr>
+                           <tr id="tr4">
+                                <td>31</td>
+                                <td>32</td>
+                                <td>33</td>
+                               </tr>
+                               <tr id="tr5">
+                                    <td>41</td>
+                                    <td>42</td>
+                                    <td>43</td>
+                                   </tr>
+                                   <tr id="tr6">
+                                        <td>51</td>
+                                        <td>52</td>
+                                        <td>53</td>
+                                       </tr>
+                                       <tr id="tr7">
+                                            <td>61</td>
+                                            <td>62</td>
+                                            <td>63</td>
+                                           </tr>
+        </tbody>
+    </table>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        
+        
+        // $('#in1')
+        $('#in1').on('input',function()
+        {
+            // console.log($('#in1')[0].value);
+            var tdd= $('td');
+            var i=0;
+            var j=0;
+            if($('#in1')[0].value=='')
+                {
+                    for(i=2;i<tdd.length;i++){
+                        $('td:eq('+i+')').parents('tr').removeClass('is-none');
+                    }
+                    // console.log('hello');
+                    
+                }
+            // console.log( $('#in1')[0].nodeValue);
+
+            // console.log($('#in1')[0].value);
+
+            // console.log($('td'));
+            for(i=2;i<tdd.length;i++){
+                // console.log(i);
+                // console.log(tdd[i]);
+                
+                if($('#in1')[0].value==tdd[i].innerText)
+                {
+                    // for(i=2;i<tdd.length;i++){
+                    //     $('td:eq('+i+')').parents('tr').toggleClass('is-none');
+                    // }
+                    $('td:eq('+i+')').parents('tr').siblings().addClass('is-none');
+                }
+                // else
+                // {
+                //     for(j=2;j<tdd.length;j++)
+                //     {
+                //         $('td:eq('+i+')').addClass('is-none');
+                //     }
+
+                // }
+
+            }
+            
+            
+        })
+                
+    </script>
+</body>
+</html>
