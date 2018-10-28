@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+html,body
+{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    /* align-items: center; */
+}    
+#box1
+{
+    width: 1200px;
+    height: 200px;
+    background-color: aquamarine;
+    
+}
+#box1 div
+{
+    float: left;
+}
+#img1
+{
+    width: 400px;
+    height: 200px;
+    background-color: rgb(34, 157, 206);
+}
+#img2
+{
+    width: 400px;
+    height: 200px;
+    background-color: rgb(145, 24, 226);
+}
+#img3
+{
+    width: 400px;
+    height: 200px;
+    background-color: rgb(214, 73, 48);
+}
+#ove
+{
+    width: 400px;
+    height: 200px;
+    overflow: hidden;
+}
+#ul1 li
+{
+    background-color: aqua;
+    width: 20px;
+    height: 20px;
+    border-radius:50%; 
+    list-style: none;
+    float: left;
+    line-height: 20px;
+    text-align: center;
+    position: relative;
+    top: -60px;
+    margin-left: 65px;
+}
+#ul2
+{
+    clear: both;
+}
+#ul2 li
+{
+    background-color: aqua;
+    width: 20px;
+    height: 20px;
+    border-radius:50%; 
+    list-style: none;
+    float: left;
+    line-height: 20px;
+    text-align: center;
+    position: relative;
+    top: -60px;
+    margin-left: 65px;
+}
+.active
+{
+    background-color: blueviolet !important;
+}
+</style>
+</head>
+<body>
+    <div id="ove">
+    <div id="box1">
+        <div id="img1"></div>
+        <div id="img2"></div>
+        <div id="img3"></div>
+    </div>
+    <ul id="ul1">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+
+        </ul>
+        <ul id="ul2">
+                <li>zuo</li>
+                <li>you</li>
+        </ul>
+    </div>
+
+    <script src="jquery-3.3.1.js"></script>
+    <script src="jquery.easing.1.3.js"></script>
+    <script>
+        // $('li').hide();
+    $('li').on('click',function()
+    {
+
+        $('#box1 div').show().fadeOut();
+        // console.log('hlel');
+        // console.log($(this)[0].innerText);
+        var num=$(this)[0].innerText;
+        // if(num)
+        // console.log($('#box1 div:eq('+(num-1)+')')[0]);
+        var temp=$('#box1 div:eq('+(num-1)+')')[0];
+        $(temp).fadeIn().siblings().hide();
+        var that=$(this)[0];
+        // $(that).toggleClass('active');
+        // console.log($(that)[0]);
+        // var thata=$(that)[0];
+        
+        // console.log($(thata));
+        $(that).toggleClass('active');
+        $(that).siblings().removeClass('active');
+        // console.log( $((this)[0]));
+        
+    })
+    $.extend(person,student);
+    var numFR=0;
+    function run()
+    {
+        // console.log('sad');
+        // console.log($(this));
+        $('li:eq('+(numFR++)+')').trigger('click');
+        if(numFR>2)
+        {
+            numFR=0;
+        }   
+        // console.log(index);wrong
+             
+    }
+    var inter=self.setInterval('run()',3000);
+    </script>
+</body>
+</html>
