@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+        *
+        {
+            padding: 0;
+            border: 0;
+            margin: 0;
+        }
+        html,body
+        {
+            width: 100%;
+            height: 100%;
+            /* display: flex;
+            flex-direction: column; */
+        }
+        .top
+        {
+            background-color: #aaa;
+        }
+        .bottom
+        {
+            background-color: #aaa;
+        }
+        .right
+        {
+            background-color: red;
+            width: 100px;
+            right: 0;
+        }
+        .left
+        {
+            background-color: green;
+            width: 100px;
+            left: 0;
+        }
+        .middle
+        {
+            background-color: blue;
+            margin-left: 100px;
+            margin-right: 100px;
+            width: 100%;
+            max-width: 700px;
+
+        }
+        .mid
+        {
+            /* display: flex;
+            flex-direction: row; */
+            width: 100%;
+            max-width: 900px;
+            position: absolute;
+        }
+        .mid div
+        {
+            height: 80px;
+            float: left;
+            position: absolute;
+        }
+        .top,.bottom
+        {
+            height: 30px;
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+            max-width: 900px;
+            clear: both;
+            line-height: 30px;
+            /* align-content: center; */
+            text-align: center;
+        }
+        .bottom
+        {
+            position: absolute;
+            /* top: 180px; */
+            top:110px;
+            width: 100%;
+
+        }
+    </style>
+<body>
+        <div class="top">header</div>
+
+    <div class="mid">
+    <div class="left">left</div>
+    <div class="middle">middle</div>
+    
+    <div class="right">right</div>
+
+    </div>
+
+    <div class="bottom">footer</div>
+</body>
+</html>
