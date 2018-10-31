@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            background-color: aqua;
+            width: 100%;
+            height: 900px;
+        }
+        #div2{
+            background-color: red;
+            width: 70%;
+            height: 900px;
+        }
+        #div3{
+            background-color: rebeccapurple;
+            width: 100%;
+            height: 900px;
+            margin: 100px;
+        }
+        #but1{position: fixed;}
+    </style>
+</head>
+<body>
+    <!-- <a href=""></a>
+    <a href=""></a>
+    <a href=""></a> -->
+    <button id="but1">top1</button>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+</body>
+<script src="jquery-3.3.1.js"></script>
+<script>
+    // $("#div1")
+    console.log($("#div1").offset().top);
+    var forbut=true;
+    $("#but1").on('click',function()
+    {
+        // if(forbut==true){ $("#div1").animate({height:'1000px'});forbut=false;}
+        // else{$("#div1").animate({height:'300px'});forbut=true;}
+        // $("#div2").scrollTop
+        console.log($(window).scrollLeft());
+        
+    })
+</script>
+</html>
