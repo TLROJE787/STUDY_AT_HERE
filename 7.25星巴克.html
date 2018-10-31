@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *
+    {
+        border: 0;
+        padding: 0;
+        margin:0;
+    }    
+    html,body
+    {
+        height: 100%;
+    }
+    #left
+    {
+        width: 30%;
+        /* background: rgb(18, 221, 228); */
+        /* height: fit-content; */
+        height: 100%;
+        position: fixed;
+        /* margin-right: -40px;
+            padding-right:40px; */
+            overflow: hidden;
+        /* overflow: hidden; */
+    }
+    #right
+    {
+        width: 70%;
+        margin-left: 30%;
+        /* background: azure; */
+        /* height: fit-content; */
+        /* height: 110%; */
+    }
+    #lunBo
+    {
+        width: 300%;
+        /* padding-bottom: 46.65%;  */
+         /* width: 200%; */
+         /* padding-bottom: 46.65%; */
+        background-color: yellow;
+        box-sizing: border-box;
+        /* background: url(festival-food.jpg); */
+        /* background: url("C:/Users/Administrator/Pictures/2016-11/festival-food.jpg");
+        background-repeat: round; */
+        
+        /* float: left; */
+        /* background-image: url(C:\Users\Administrator\Pictures\2016-11festival-food.jpg) */
+        /* overflow-x:scroll; */
+        /* overflow-y:hidden; */
+    }
+    .imgLun1
+    {
+        display: inline-block;
+        width: 33%;
+        padding-bottom: 46.65%; 
+        /* background-color: yellow; */
+        box-sizing: border-box;
+        /* background: url(=tival-food.jpg); */
+        background: url("C:/Users/Administrator/Pictures/2016-11/festival-food.jpg");
+        background-repeat: round;
+        /* float: left; */
+        /* overflow: hidden; */
+       
+
+    }
+    .imgLun2
+    {
+        display: inline-block;
+        width: 100%;
+        padding-bottom: 46.65%; 
+        /* background-color: yellow; */
+        box-sizing: border-box;
+        /* background: url(festival-food.jpg); */
+        background: url("C:/Users/Administrator/Pictures/2016-11/festival-food.jpg");
+        background-repeat: round;
+   
+        /* float: left; */
+        /* overflow: hidden; */
+       
+
+    }
+    .imgLun3
+    {
+        display: inline-block;
+        width: 100%;
+        padding-bottom: 46.65%; 
+        /* background-color: yellow; */
+        box-sizing: border-box;
+        /* background: url(festival-food.jpg); */
+        background: url("C:/Users/Administrator/Pictures/2016-11/festival-food.jpg");
+        background-repeat: round;
+   
+        /* float: left; */
+        /* overflow: hidden; */
+       
+
+    }
+    #lunBo img
+    {
+        /* width: 100%;
+        height: 100%; */
+    }
+    .wenZi
+    {
+        text-align: center;
+        padding-top:30px;
+        padding-bottom:30px;
+        margin-left: 12.89%;
+        margin-right: 12.89%;
+    }
+    .wenZi2
+    {
+        /* margin-left: 30%; */
+    }
+    .bigWZ
+    {
+        font-size: larger;
+    }
+    #img1
+    {
+        /* background: yellowgreen; */
+        width: 100%;
+        padding-bottom: 37.266%;
+    }
+    .imgSmal
+    {
+        margin: 12px;
+        width: 30.88%;
+        /* background: aquamarine; */
+        padding-bottom: 19.478%;
+        /* float: left; */
+    }
+    #juLeBu
+    {
+        width: 100%;
+        padding-bottom: 18.941%;
+        /* background: rgb(30, 255, 0); */
+        clear: both;
+        display: flex;
+        /* justify-content: center;
+        align-items: center; */
+        padding-top:92px;
+        box-sizing: border-box;
+        /* padding-bottom: -10px; */
+    }
+    #jiangTang
+    {
+        width: 100%;
+        /* padding-bottom: 40.3288%; */
+        /* background-color: seagreen; */
+        overflow: hidden;
+    }
+    #jingXuan
+    {
+        width: 100%;
+        /* padding-bottom: 31.595%; */
+        /* background: silver; */
+    }
+    #headerL
+    {
+        width: 100%;
+        height: 96px;
+        /* background-color: darkmagenta; */
+        padding: 24px;
+        box-sizing: border-box;
+        line-height: 48px;
+        z-index: 10;
+    }
+    #but1
+    {
+        width: 24px;
+        height: 24px;
+        /* background-color: darkgreen; */
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        z-index: 9;
+    }
+    #mid1
+    {
+        overflow-y: scroll;
+        width: 100%;
+        height: 100%;
+        /* z-index: 31; */
+        padding-left: 84px ;
+        padding-right: 24px ;
+        /* background-color: darkkhaki; */
+        box-sizing: border-box;
+        /* text-align: center; */
+        /* line-height: 100%; */
+        position: absolute;
+        /* z-index: -1; */
+        /* display: none; */
+        /* display: none; */
+        /* z-index: 4; */
+        top: 96px;
+        left: 0;
+    }
+    .cen1
+    {
+        top: 50%;
+        left: auto;
+        position: absolute;
+        /* z-index: -1; */
+    }
+    .cen2
+    {
+        
+        top: 55%;
+        left: auto;
+        position: absolute;
+        /* margin-left: 5px; */
+    }
+    .cen3
+    {
+        
+        top: 55%;
+        /* left: auto; */
+        left: 150px;
+        position: absolute;
+        /* margin-left: 5px; */
+    }
+    .cen22
+    {
+        
+        top: 100%;
+        left: auto;
+        position: absolute;
+        /* margin-left: 5px; */
+    }
+    .cen32
+    {
+        
+        top: 100%;
+        /* left: auto; */
+        left: 140px;
+        position: absolute;
+        /* margin-left: 5px; */
+    }
+    #innerL
+    {
+        background-color: white;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        top: 96px;
+        left: 0;
+        display: block;
+        /* float: inherit; */
+        /* position: absolute; */
+        z-index: 4;
+        /* z-index: -1; */
+        /* display: none; */
+    }
+    #innerL2
+    {
+
+        position: absolute;
+        top: 50%; 
+        left: 79px;
+        top: 200px;
+/* top: 0;
+left: 0; */
+        width: 100%;
+        /* height: 100%; */
+        /* height: 100px; */
+        /* z-index: 5; */
+        transform-origin: 0 -2;
+        transform: scale(2);
+        /* opacity: 1; */
+        opacity: 0;
+        transition: all 0.3s ease ;
+        /* background-color: deeppink; */
+        /* z-index: -1; */
+        /* display: none; */
+        display: block;
+        background-color: white;
+        z-index: 5;
+    }
+    /* @keyframes lef1
+    {
+        
+    } */
+    .nchange
+    {
+        /* transform: scale(2) opacity(0); */
+        /* transform: scale(2); */
+        /* transition: all 1s ease ; */
+    }
+    .change
+    {
+        /* display: none; */
+        /* transform: scale(1) opacity(0); */
+        /* display: none; */
+    }
+    .hid
+    {
+        display: none;
+    }
+    /* #test
+    {
+        background: red;
+        width: 100px;
+        height: 100px;
+        /* transform: scale(2); */
+    /* }  */
+    @media screen and (max-width:1024px)
+    {    #innerL2
+    {
+
+        position: fixed;
+        /* top: 50%; */
+        /* left: 79px; */
+        /* top: 200px; */
+top: 0;
+left: 0;
+        width: 100%;
+        height: 100%;
+        /* height: 100px; */
+        /* z-index: 5; */
+        transform-origin: 0 -2;
+        transform: scale(2);
+        /* opacity: 1; */
+        opacity: 0;
+        transition: all 0.3s ease ;
+        /* background-color: deeppink; */
+        /* z-index: -1; */
+        /* display: none; */
+        display: block;
+        background-color: white;
+        z-index: 5;
+    }
+        #headerL
+        {
+            /* padding: 16px;
+            height: 48px;
+            width: 100%;
+            /* position: absolute; */
+            /* float: left;
+            top: 0;
+            left: 0;  */
+        }
+        #left{
+            width: 100%;
+            height: 182px;
+            top: 0;
+            position: absolute;
+
+            /* box-sizing: border-box; */
+        }
+        #right
+        {
+            width: 100%;
+            /* margin-top: 182px; */
+            top:182px;
+            position: absolute;
+            /* background: blueviolet; */
+            margin-left: 0;
+        }
+        #headerL
+        {
+            padding: 16px;
+            height: 80px;
+            box-sizing: border-box;
+        }
+        #mid1
+        {
+            position: absolute;
+            top: 80px;
+            height: 102px;
+        }
+        .cen2{top: 75%;}
+        .cen3{top:75%;left: 135px;}
+    }
+    #box-img
+    {
+        display: flex;
+
+    }
+    .imgSmal:nth-child(1)
+    {
+        background: url("C:/Users/Administrator/Pictures/2016-11/starbucks-tmall-0723-cn.jpg");
+        background-repeat: round;
+        transition: all 0.3s ease;
+    }
+    .imgSmal:nth-child(1):hover,.imgSmal:nth-child(2):hover,.imgSmal:nth-child(3):hover
+    {
+        /* top: 100px; */
+        /* background:red; */
+        transform: translateY(-25px);
+       
+    }
+    .imgSmal:nth-child(2)
+    {
+        background: url("C:/Users/Administrator/Pictures/2016-11/starbucks-design-studio-web-china.jpg");
+        background-repeat: round;
+        transition: all 0.3s ease;
+    }
+    .imgSmal:nth-child(3)
+    {
+        background: url("C:/Users/Administrator/Pictures/2016-11/homepage-career-cn.jpg");
+        background-repeat: round;
+        transition: all 0.3s ease;
+    }
+    /* starbucks-design-studio-web-china.jpg */
+    /* starbucks-tmall-0723-cn.jpg */
+    #juL
+    {
+        width:50%;
+        text-align: center;
+    }
+    #juR{width: 50%}
+    .imgSmal2
+    {
+        width: 165px;
+        height:191px;
+        padding-top: 52px;
+        /* background: rgb(18, 221, 228); */
+        margin: 13px;
+        box-shadow: 1px 1px 1px 1px rgba(0,0,0,.5);
+        transition: all 0.3s ease;
+        padding-bottom: -52px;
+    }
+    .imgSmal2:hover
+    {
+        transform: translateY(-25px);
+    }
+    .imgSmal3
+    {
+        width: 165px;
+        height:191px;
+        /* background: rgb(18, 221, 228); */
+        margin: 13px;
+    }
+    #box-img3
+    {
+        /* display: flex; */
+        padding-left: 191px;
+        overflow-x:scroll;
+        overflow-y:hidden;
+        /* width: ; */
+        white-space: nowrap;
+        margin-bottom: -30px;
+        padding-bottom: 30px;
+        /* margin-bottom: -10000px; */
+        /* scroll-snap-type: none; */
+        /* pad */
+    }
+    #box-img3 div
+    {
+        /* float: left; */
+        display: inline-block;
+        width: 295px;
+        height: 227px;
+        transition: all 0.3s ease;
+        /* margin-bottom: -10000px;
+        padding-bottom: 10000px; */
+        /* background-repeat: round; */
+    }
+    #box-img3 div:nth-child(1)
+    {
+        background:url("C:/Users/Administrator/Pictures/2016-11/]}UUBN2ZP1{1C@M63~P4P7B.png")
+        
+    }
+    #box-img3 div:nth-child(2)
+    {
+        background:url("C:/Users/Administrator/Pictures/2016-11/}_K0PO~Z)1VN1{8MU[C5Q3D.png")
+    }
+    #box-img3 div:nth-child(3)
+    {
+        background:url("C:/Users/Administrator/Pictures/2016-11/~EBM`WXRMM8RZFYIC[ND60X.png")
+    }
+    #box-img3 div:nth-child(4)
+    {
+        background:url("C:/Users/Administrator/Pictures/2016-11/~EBM`WXRMM8RZFYIC[ND60X.png")
+    }
+    #box-img3 div:nth-child(5)
+    {
+        background:url("C:/Users/Administrator/Pictures/2016-11/~EBM`WXRMM8RZFYIC[ND60X.png")
+    }
+    #box-img3 div:hover
+    {
+        transform: translateY(-25px);
+    }
+    #box-img2
+    {
+        display: flex;
+        /* align-content: center; */
+        margin-left: 186px;
+    }
+    #jingText
+    {
+        text-align: center;
+    }
+    #ul1 li{
+        list-style: none;
+        float: left;
+        margin-left: 8px;
+    
+    }
+    #img0
+    {
+        width:60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: green;
+        float: left;
+        margin-right: 5px;
+        background: url('https://www.starbucks.com.cn/assets/images/logo.svg');
+        background-repeat: round;
+    }
+             .hero  li{
+              list-style: none;
+              float: left;
+              width: 25%;
+            }
+            li img{
+              width: 100%;
+            }
+            .hero{
+              width: 100%;
+              overflow: hidden;
+            }
+            .slider-list{
+              width: 400%;
+            }
+            
+            @media (min-width: 641px){
+              .mobile-hidden{
+                display: block !important;
+              }
+              .show-mobile{
+                display: none !important;
+              }
+            }
+            @media (max-width: 640px){
+              .mobile-hidden{
+                display: none !important;
+              }
+              .show-mobile{
+                display: block !important;
+              }
+            }
+            /* .slider-list img
+            {
+                width: 100%;
+                height: 100%;
+            } */
+            #prev,#next
+            {
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                position: absolute;
+            }
+            #prev
+            {
+                top: 172%;
+                left: 31%;
+                z-index: 3;
+            }
+            #next
+            {
+                top: 172%;
+                left: 94%;
+                z-index: 3;
+            }
+            #btn
+            {
+                position: absolute;
+                top:12%;
+                left:95%;
+                height: 150px;
+                width: 50px;
+                opacity: 0.2;
+            }
+            a
+            {
+                /* text-style: none; */
+                text-decoration: none;
+                /* font-style:2px; */
+                font-weight:bold ;
+                color: black;
+            }
+    </style>
+  
+
+         
+<body>
+    <div id="left">
+            <div id="headerL">
+                <div id="img0"></div>
+                    <ul id="ul1">
+                        <li><a href="">门店</a></li>
+                        <li><a href="">我的账户</a></li>
+                        <li><a href="">菜单</a></li>
+                    </ul>
+                    <div id="but1">三</div>
+                </div>
+                <!-- <div id="test">12351</div> -->
+        <div id="innerL" class="change">
+            <!-- <span id="innerL2" >
+                 元素，并带有淡出的过渡动画效果。
+
+                    所谓"淡出"的动画效果，即元素的不透明度的比例从100%逐渐减小到0%。
+                    
+                    如果元素本身是隐藏的，则不对其作任何改变。如果元素是可见的，则将其隐藏。
+                   
+                    与该函数相对的是fadeIn()函数，用于显示所有匹配的元
+                    <br><br>
+                    English | 隐私政策 | 使用条款
+                沪公网安备 31010402000318号 | 沪ICP备17003747号
+           </span> -->
+           <!-- <span id="innerL2" >
+                English | 隐私政策 | 使用条款
+                沪公网安备 31010402000318号 | 沪ICP备17003747号
+           </span> -->
+           <div id="innerL2">
+                <div id="img0"></div><br>
+                <br>
+                <br>
+                    <a href="">门店</a><br>
+                    <a href="">星享俱乐部</a><br>
+                    <a href="">菜单</a><br>
+                    <hr style="border:solid 1px #aaa;width:100%;">
+                    <a href="">星巴克移动应用</a><br>
+                    <a href="">星礼卡</a><br>
+                    <a href="">星巴克甄选™</a><br>
+                    <a href="">咖啡星讲堂</a><br>
+                    <a href="">上海烘焙工坊</a><br>
+                    <a href="">关于星巴克</a><br>
+                    <a href="">帮助中心</a><br>
+                    <hr style="border:solid 1px #aaa;width:100%;">
+                    <a class="bigWZ cen22">注册</a>
+                    <a class="bigWZ cen32">登陆</a>
+           </div>
+                </div>
+        <!-- <div id="headerL">
+            sad asfsa sagas
+            <div id="but1"></div>
+        </div> -->
+        <div id="mid1" class="mid1">
+                <!-- 心情惬意，来杯咖啡吧 ☕ -->
+                <h2 class="bigWZ cen1">心情惬意，来杯咖啡吧 ☕</h2>
+                <a href="" class="bigWZ cen2">注册</a>
+                <a href="" class="bigWZ cen3">登陆</a>
+        
+            </div>
+        <div id="footer1"></div>
+    </div>
+    <div id="right">
+            <div class="hero">
+                    <ul class="slider-list">
+                      <li>
+                          <img src="https://www.starbucks.com.cn/assets/images/featured/2018summer3/kv-mooncake.jpg" class="mobile-hidden">
+                          <img src="https://www.starbucks.com.cn/assets/images/featured/2018summer3/kv-mooncake-mobile.jpg" class="show-mobile">
+                      </li>
+                      <li>
+                          <img src="https://www.starbucks.com.cn/assets/images/featured/2018summer3/kv-bev.jpg" class="mobile-hidden">
+                          <img src="https://www.starbucks.com.cn/assets/images/featured/2018summer3/kv-bev-mobile.jpg" class="show-mobile">
+                      </li>
+                      <li>
+                          <img src="https://www.starbucks.com.cn/assets/images/featured/2018summer3/fp-cold-foam.jpg" class="mobile-hidden">
+                          <img src="https://www.starbucks.com.cn/assets/images/featured/2018summer3/fp-cold-mobile.jpg" class="show-mobile">
+                      </li>
+                      <li>
+                          <img src="https://www.starbucks.com.cn/assets/images/featured/2018summer3/kv-mooncake.jpg" class="mobile-hidden">
+                          <img src="https://www.starbucks.com.cn/assets/images/featured/2018summer3/kv-mooncake-mobile.jpg" class="show-mobile">
+                      </li>
+                    </ul>
+                  </div>
+                  <button id="btn">下一张</button>
+            <div id="lunBo">  
+            <!-- <div class="imgLun1"></div>
+            <div class="imgLun2"></div>
+            <div class="imgLun3"></div> -->
+            </div>
+            <!-- <div id="lunBo"> <img src="C:\Users\Administrator\Pictures\2016-11\festival-food.jpg" alt=""> </div> -->
+        <!-- <div class="wenZi">
+                
+                <span class="bigWZ">够热才好玩</span>
+                <br><br> <span> 全新咖啡华夫脆风味星冰乐®，新鲜馥郁的浓缩咖啡层层融入浓郁奶香，顶部覆以焦香松脆的华夫风味饼干碎，像品尝一份流动的甜品，口感层层丰富。马达加斯加香草风味星冰乐®清新回归，来自马达加斯加的优质香草的芬芳与奶香星冰乐交融相拥，黑白互衬，层层美味，层层入心。
+                    </span>
+                  </div>
+                  <div id="img1">
+
+                    </div> -->
+                    <!-- 星享卡玩出别样夏日乐趣
+                
+                醇香之旅迷你星享卡套装设计灵感源自浅雅烘焙咖啡豆包装，如同夏日轻快跳跃的阳光点缀于星享卡上。随卡附赠趣味扭蛋，三款咖啡冲煮器皿随机出现，带来玩趣小惊喜。 -->
+                
+                <!-- <div class="wenZi wenZi2">
+                                
+                        <span class="bigWZ">星享卡玩出别样夏日乐趣</span>
+                        <br><br> <span>醇香之旅迷你星享卡套装设计灵感源自浅雅烘焙咖啡豆包装，如同夏日轻快跳跃的阳光点缀于星享卡上。随卡附赠趣味扭蛋，三款咖啡冲煮器皿随机出现，带来玩趣小惊喜。
+                            </span>
+                          </div>
+                </div>
+   
+   
+                </div> -->
+                <div id="box-img">
+                    <div class="imgSmal"></div>
+                    <!-- <div></div> -->
+                    <!-- <div></div> -->
+                    <div class="imgSmal"></div>
+                    <div class="imgSmal"></div>
+ 
+                </div>
+                <div id="juLeBu">
+                    <div id="juL"> <h2>
+                            星享俱乐部
+
+                            <!-- 开启您的星享之旅，星星越多、会员等级越 -->
+                    </h2><br><br>
+                    <span>开启您的星享之旅，星星越多、会员等级越高、好礼越丰富。</span>
+                    <a id="home-msr-learn-more" class="button link" href="https://www.starbucks.com.cn/account/my-starbucks-rewards">了解更多 ›</a></div>
+                    <div id="juR"><img src="C:\Users\Administrator\Pictures\2016-11\C%2RR0T7RL@NR1W50SR`NAT.png" alt=""></div>
+                   
+                    
+                </div>
+                <div id="jingXuan">
+                        <!-- 星巴克精选
+
+                        在星巴克天猫旗舰店发现更多咖啡心意 -->
+                        <div id="jingText"> <h2>
+                                星巴克精选
+    
+                                <!-- 开启您的星享之旅，星星越多、会员等级越 -->
+                        </h2><br><br>
+                        <span>在星巴克天猫旗舰店发现更多咖啡心意</span>
+                        <div id="box-img2">
+                                <div class="imgSmal2">
+                                    <h3>星享卡</h3>
+                                    <p class="margin2">开始您的<br>星巴克专属之旅</p>
+                                    <a href="https://starbucks.tmall.com/p/rd515396.htm?spm=a1z10.1-b-s.w5001-14489348230.7.MtuIoi">了解更多</a>
+                                </div>
+                                <div class="imgSmal2">  <h3>星享卡</h3>
+                                    <p class="margin2">用一份心礼<br>让心意相随</p>
+                                    <a href="https://starbucks.tmall.com/p/rd515396.htm?spm=a1z10.1-b-s.w5001-14489348230.7.MtuIoi">了解更多</a>
+               </div>
+                                <div class="imgSmal2">  <h3>星享卡</h3>
+                                    <p class="margin2">心意<br>从这一杯开始</p>
+                                    <a href="https://starbucks.tmall.com/p/rd515396.htm?spm=a1z10.1-b-s.w5001-14489348230.7.MtuIoi">了解更多</a>
+               </div>
+                                <div class="imgSmal2">  <h3>星享卡</h3>
+                                    <p class="margin2">星巴克<br>用心制作</p>
+                                    <a href="https://starbucks.tmall.com/p/rd515396.htm?spm=a1z10.1-b-s.w5001-14489348230.7.MtuIoi">了解更多</a>
+               </div>
+                        </div>
+
+                </div>
+                </div>
+
+                <div id="jiangTang">
+                        <button id="prev">上</button>
+                        <button id="next">下</button>
+                        <div id="jingText"> <h2>
+                                1912 派克街 | 咖啡星讲堂
+    
+                        </h2><br><br>
+                        <span>了解更多星巴克咖啡文化</span>
+                        <div id="box-img3">
+                        <div class="imgSmal3"></div>
+                        <div class="imgSmal3"></div>
+                        <div class="imgSmal3"></div>
+                        <div class="imgSmal3"></div>
+                        <div class="imgSmal3"></div>
+
+                        </div>
+
+                </div>
+    </div>            
+
+</body>
+<script src="jquery-3.3.1.js"></script>
+<script>
+    $("#prev").hide();
+    var scrollBar = $("#box-img3")[0];
+    //  scrollBar.scrollLeft + 300;
+    console.log(scrollBar.scrollWidth);
+    // scrollBar.scrollLeft + 300000;
+    var timer = null;
+    $("#next").on("click",function(){
+      run("left")
+    });
+    $("#prev").on("click",function(){
+      run("right")
+    });
+    function run(dire){
+      var scrollLeft = dire == "left" ? scrollBar.scrollLeft + 300 : scrollBar.scrollLeft - 300;
+      $("#box-img3").animate({
+        scrollLeft:scrollLeft
+      },500,function(){
+        showArrow();
+      });
+    }
+    function showArrow(){
+      $("#prev").add("#next").show();
+      if(scrollBar.scrollLeft <= 0){
+        $("#prev").hide();
+      }else if(scrollBar.scrollLeft >= scrollBar.scrollWidth-scrollBar.clientWidth){
+        $("#next").hide();
+      }
+    }
+    $(".content").on("scroll",function(){
+      // clearTimeout(timer);
+      // timer = setTimeout(function(){
+      //   showArrow();
+      // },1000)
+      if($(this).data("timer")){
+        clearTimeout($(this).data("timer"));
+      }
+      $(this).data("timer",setTimeout(function(){showArrow()},1000));
+      
+    })
+
+    var temp=1;
+    $('#but1').on('click',function()
+    {       
+        
+        // console.log('ok');
+        // $('#innerL').addClass('hide');
+        // $('#mid1').toggleClass('hide');
+        if(temp==1)
+        {
+            $('#innerL').removeClass('change');
+            $('.mid1').addClass('change');
+            $('.mid1').hide(0);
+            $('#innerL2').css('transform','scale(1)');
+            $('#innerL2').css('opacity','1');
+            $('.mid1').css('transform','scale(2)');
+            $('.mid1').css('opacity','0');
+            temp=0;
+            // transform: scale(2) opacity(0);
+
+            // $('#mid1').fadeOut();
+            // $('#innerL').fadeIn();
+        }else        if(temp==0)
+        {
+            $('#innerL').addClass('change');
+            $('.mid1').removeClass('change');
+            // $('.mid1').delay(3000).show();
+            $('#innerL2').css('transform','scale(2)');
+            $('#innerL2').css('opacity','0');
+            $('.mid1').css('transform','scale(1)');
+            $('.mid1').css('opacity','1');
+            $('.mid1').delay(300).show(0);
+            // console.log('ok');
+            // $('.mid1').hide();
+            
+            temp=1;
+            // transform: scale(2) opacity(0);
+
+            // $('#mid1').fadeOut();
+            // $('#innerL').fadeIn();
+        }
+        // else
+        // {
+        //     $('#innerL2').css('transform','scale(2)');
+        //     $('#innerL2').css('opacity','0');
+        //     $('.mid1').css('transform','scale(1)');
+        //     $('.mid1').css('opacity','1');
+        //     // $('#innerL').fadeOut();
+        //     // $('#mid1').fadeIn();
+        // }
+        console.log(temp);
+    })
+// <!-- 
+//     $('#next').on("click",function()
+//     {
+//         run("left");
+//     });
+//     function run(dire)
+//     {
+//         var scrollLeft=dire=="left"?scrollbar.scrollLeft-300:scrollLeft.scrollLeft+300;
+//     }
+//     function showArrow()
+//     {
+//         $("#prev").add("#next").show();
+//         if (scrollbar.scrollLeft<=0)
+//         {
+//             $("#prev").hide();     
+//         }
+//         else if (scrollbar.scrollLeft>=scrollbar.scrollWidth) {
+//             $("#next").hide();    
+//         }
+
+
+
+//     $(".content").on("scroll",function ()
+//     {
+//         showArrow();
+//     }
+//     )    
+
+
+
+//     } -->
+var nowIndex = 0;
+            $("#btn").on("click",function(){
+              nowIndex ++;
+              left = $("li img").eq(0).width()*-nowIndex;
+              console.log(left,nowIndex);
+              
+              $(".slider-list").css({
+                "transform":"translateX("+left+"px)",
+                "transition":"all 1s ease"
+              });
+              setTimeout(function(){
+                if(nowIndex==3){
+                  nowIndex = 0;
+                  $(".slider-list").css({
+                    "transition":"none",
+                    "transform":"translateX(0)"
+                  });
+                }
+              },1000)
+              
+            }); 
+            
+</script>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </Q>
+</html>
