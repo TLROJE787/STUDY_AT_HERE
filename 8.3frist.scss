@@ -1,0 +1,11 @@
+.div1{
+width:100px;
+}
+$HEIGHT:100px;
+.div2{
+  heihgt:$HEIGHT；
+}
+div3{
+  width: $HEIGHT;
+  //width: $HEIGHT;
+}
