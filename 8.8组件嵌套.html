@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+         <com1 @click.native='add' @add='add'></com1>
+
+    </div>
+   
+    <template id="com1">
+        
+        <div>
+                <button @click='$emit("add")'></button>
+                <h1>com2</h1>
+        </div>
+        <div :is='whichComponent'></div>
+    </template>
+    <script src="vue.js"></script>
+    <script>
+    Vue.component('com1',{
+        template:'#com1',
+        props
+    })
+    Vue.component('com2',{
+        template:'#com2'
+    })
+    new Vue({
+        el:'#app',
+        data:{
+            whichComponent:component1
+        }
+    })
+    </script>
+</body>
+</html>
