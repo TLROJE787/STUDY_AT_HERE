@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+       <div v-test="'red'">hello world</div>
+        <!-- <button @click="change">change</button>
+        <button @click="add">add</button>
+        <button @click="destory">destory</button>
+        <weichuang :wmsg='msg'></weichuang>
+        <test :tmsg='msg2'></test>
+        {{num}}
+    </div> -->
+    </div>
+    <script src="vue.js"></script>
+    <script>
+            Vue.directive("test",function(el,binding,vnode){
+      console.log(el);
+      console.log(binding);
+      console.log(vnode);
+      el.style.backgroundColor = binding.value;
+    })//Vue.directive要放在new Vue前面
+        new Vue({
+            el:'#app',
+            data:{
+                // arr:[1,2,3,4,5],
+                // obj:{
+                //     name:"lis"
+                // },
+                // num:0,
+                // msg:'fellow23',
+                // msg2:'vue'
+            },
+            // components:{
+            //     template:`<h1>aaaaa</h1>`
+            //     ,props:['tmsg']
+            // },
+            // methods:{
+            //     change(){
+            //         console.log(1);
+            //         this.obj.name ="zhangshan";
+            //         this.obj.age="20"
+                    
+            //     },
+            //     add(){
+            //         this.num++;
+            //     },
+            //    destory(){
+            //        this.$destroy();
+            //    }
+
+            // },
+            // beforCreate(){
+            //         console.log('beforCreate');
+                    
+            //     },
+            //     created(){
+            //         console.log('created');
+                    
+            //     },
+            //     beforMount(){
+            //         console.log('beforMount');
+                    
+            //     },
+            //     mounted(){
+            //         console.log("mounted");
+                    
+            //     },
+            //     beforUpdate(){
+            //         console.log("beforUpdate");
+                    
+            //     },
+            //     updated(){
+
+            //     },
+        })
+    //     Vue.component("weichuang",{
+            
+    //     template:`<div>
+    //     <h1>hello world!</h1>
+    //     <h1>jellow {{wmsg}}</h1>
+    //     </div>`,
+    //     props:['wmsg']
+    // });
+    // Vue.directive("test",function(el,binding,vnode){
+    //     console.log(el);
+    //     console.log(binding);
+    //     console.log(vnode);
+        
+        
+        
+    // })//有问题不会弄=》function可能写的不对
+
+
+    </script>
+</body>
+</html>
