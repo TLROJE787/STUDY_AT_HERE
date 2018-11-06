@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div id="app">
+               <com1></com1>
+               <test1></test1>
+               <weichuang>
+                   <span slot='username'>lisi</span><span slot='age'>25</span>
+                   <span>default</span>
+                   <h1>hello</h1>
+                   <div>abc</div>
+                </weichuang>
+        </div>
+        <template id="temp">
+            <div>
+                <div>姓名: <slot name='username'></slot></div>
+                <div>年龄:  <slot name='age'></slot></div>
+                <!-- weichuang里面绑定slot来确定插槽，插入位置就是template里slot /slot的位置 -->
+                <!-- <slot></slot> -->
+            </div>
+        </template>
+    <script src="vue.js"></script>
+    <script>
+        Vue.component('weichuang',{
+        template:'#temp',
+        })//weichuang是标签名字,template后面是选择器
+    Vue.component("com1",{
+        template:`<h1>hello{{msg}}</h1>`,
+        props:['co1'],
+        data(){
+            return{
+                msg:'fellow 23'
+            }
+        }//Vue可以使用msg通过data()传值
+    })
+    new Vue({
+        el:'#app',
+        components:{
+            test1:{
+                template:`
+                <test2></test2>
+                `,
+                components:{
+                    test2:{
+                        template:`
+                        <h1>WTF</h1>
+                        `
+                    }
+                }
+            }
+        }
+    })//嵌套的组件嵌套
+    </script>
+</body>
+</html>
