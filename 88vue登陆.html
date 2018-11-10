@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    html,body{
+        height: 100%;
+        width: 100%;
+       
+    }
+    #app{
+        width: 100%;
+        height: 100%;
+    }    
+    .fullScreen{
+        width: 100%;
+        height: 100%;
+        background: red;
+        opacity: .5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .hide{
+        display: none;
+    }
+    h1{
+        display: inline-block;
+    }
+    </style>
+</head>
+
+<body>
+        <div id="app" :class="{fullScreen:Isclick}">
+            <div :class='{hide:!Isclick}'><h1>{{msg}}</h1> <h1 @click='close' >[X]</h1></div>
+            <div>
+            <quanju  :tmsg="msg"  :is='whichComponent' :class='{hide:!Isclick}'>
+                    <input type="text" slot='username'>
+                    <input type="text" slot='password'> 
+            </quanju>
+        </div>
+                <button @click='clickLR($event)' :class='{hide:Isclick}' >登陆</button>
+                <button @click='clickLR($event)' :class='{hide:Isclick}'>注册</button>
+   
+        </div>
+
+        <template id="temp1">
+            <div>
+                <!-- <div><span>{{tmsg}}</span> <span @click='$emit("close")'>[X]</span></div> -->
+                <div>用户名:<slot name='username'></slot></div>
+                <div>密码:<slot name='password'></slot></div>
+                <button>{{tmsg}}</button>
+            </div>
+        </template>
+        <template id="temp2">
+                <div>
+                    <!-- <div><span>{{tmsg}}</span> <span @click='$emit("close")'>[X]</span></div> -->
+                    
+                    <div>用户名:<slot name='username'></slot></div>
+                    <div>密码:<slot name='password'></slot></div>
+                    <div>其他...</div>
+                    <button>{{tmsg}}</button>
+                </div>          
+            </template>
+    <script src="vue.js"></script>
+    <script>
+    Vue.component('quanju',{
+        template:'#temp1',
+        props:['tmsg']
+    })    
+    // Vue.component('quanju',{
+    //     template:`<div>
+    //     <h1>{{tmsg}}</h1>
+    //     <div >{{tmsg}}</div>
+    //     </div>`,
+    //     props:['tmsg']//书写格式template里写['tmsg']和{{tmsg}}，自定标签里写:tmsg='msg'
+    // })
+    new Vue({
+        el:'#app',
+        data:{
+            msg:'aaa',
+            logOrRig:'',
+            Isclick:false,
+            whichComponent: '',
+            IsNclick:true
+        },
+        methods:{
+            clickLR(e){
+                // console.log(this);
+                // console.log(e.path[0].innerHTML);
+                this.msg=e.path[0].innerHTML;
+                this.Isclick=true;
+                this.IsNclick=!this.Isclick;
+                if(this.msg=='登陆'){
+                    this.whichComponent='component1'
+                }else{
+                    this.whichComponent='component2'
+                }
+            },
+            close(){
+                this.Isclick=false;
+                this.IsNclick=!this.Isclick;
+                console.log('hello');
+                
+            }
+        },
+        components:{
+            component1:{
+                template:'#temp1',
+                props:['tmsg']
+            },
+            component2:{
+                template:'#temp2',
+                props:['tmsg']
+            },
+        }
+    })
+    
+    </script>
+</body>
+</html>
