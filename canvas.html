@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <!-- <script src="main.js"></script> -->
+</head>
+<body>
+    <canvas width="500px" height="500px" style="background-color:black;" id="can1"></canvas>
+    <script>
+        var Ocan=document.getElementById('can1');
+        var can=Ocan.getContext('2d');
+        console.log(can);
+        can.beginPath();
+can.moveTo(100,150);
+can.lineTo(350,50);
+can.strokeStyle='red';
+can.lineWidth='10';
+can.stroke();//绘制用
+    </script>
+</body>
+</html>
