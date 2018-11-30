@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let a={
+        aaa:1,
+        bbb:2,
+        ccc:3,
+        ddd:4}
+    let b=[
+        'eee',
+        'fff',
+        ['ggg',
+         'hhh'
+        ]
+    ]
+    let {aaa,bbb}=a;
+    console.log(aaa,bbb);
+    let [c,d]=b;
+    console.log(c,d);
+    let [,,[e,f]]=b;
+    console.log(e,f);
+    function name(params=1) {
+        console.log(params);
+        params=2;
+        console.log(params);   
+    }
+    name()
+    var is_symbol=Symbol('is_$symbolis_$symbolis_$symbolis_$symbolis_$symbol')
+    var _a=false;
+    console.log(_a,_a);
+    _a[is_symbol]=true;
+    // console.log(_a[is_symbol]=true,_a[is_symbol]);
+    function symb() {
+        _a[is_symbol]=true
+        if(_a[is_symbol]){
+            console.log('yes');
+            
+        }else{
+            console.log('no');
+        }
+    }
+    symb()
+</script>
+</html>
