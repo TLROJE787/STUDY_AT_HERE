@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 寄生组合式继承+构造函数模式创建对象
+    console.log('寄生组合式继承');
+    function Person(){
+        this.name='zs';
+        this.age=20;
+    }
+    Person.prototype.sayName=function (){
+        console.log(this.name);
+    }
+    function Coder(){
+        Person.call(this);
+    }
+    Coder.prototype=new Person();
+    Coder.prototype.constructor=Coder;
+    let coderP =new Coder();
+    coderP.sayName();
+    function kuaiP(arr){
+        if(arr.length<=1){
+            return arr;
+        }
+        let right=[];
+        let left=[];
+        let mid=arr.splice(0,1)[0];
+            for(var i=0;i<arr.length;i++){
+                if(arr[i]<=mid){
+                    left.push(arr[i]);
+                }
+                else{
+                    right.push(arr[i]);
+                }
+            }
+        // console.log(left,right);
+        return kuaiP(left).concat(mid,kuaiP(right));
+    }
+    let arr=[1,5,7,24,2,3,4,5,7,24,547,234,765,242356,567851,5,7,2];
+    // kuaiP(arr);
+    console.log(kuaiP(arr));
+    // function quickSort(arr){
+    //         //如果数组<=1,则直接返回
+    //         if(arr.length<=1){return arr;}
+    //         var pivotIndex=Math.floor(arr.length/2);
+    //         //找基准，并把基准从原数组删除
+    //         var pivot=arr.splice(pivotIndex,1)[0];
+    //         //定义左右数组
+    //         var left=[];
+    //         var right=[];
+
+    //         //比基准小的放在left，比基准大的放在right
+    //         for(var i=0;i<arr.length;i++){
+    //             if(arr[i]<=pivot){
+    //                 left.push(arr[i]);
+    //             }
+    //             else{
+    //                 right.push(arr[i]);
+    //             }
+    //         }
+    //         //递归
+    //         return quickSort(left).concat([pivot],quickSort(right));
+    //     }
+    //     console.log(quickSort(arr));
+        
+</script>
+</html>
