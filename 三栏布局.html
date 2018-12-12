@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            border: 0;
+        }
+        .content{
+            width: 100%;
+            position: relative;
+            height: 200px;
+            display: flex;
+            background: red;
+            padding: 0 200px;
+            box-sizing: border-box;
+        }
+        .left{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 0;
+            background: blue;
+            
+        }
+        .right{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            right: 0;
+            background: green;
+        }
+        .middle{
+            flex-grow: 1;
+        }
+        /* 111111111111111 */
+        .content2{
+            width: 100%;
+            position: relative;
+            height: 200px;
+            /* display: flex; */
+            background: red;
+            /* padding: 0 200px; */
+            box-sizing: border-box;
+        }
+        .left2{
+            width: 200px;
+            height: 200px;
+            /* position: absolute;
+            left: 0; */
+            float: left;
+            background: blue;
+            
+        }
+        .right2{
+            width: 200px;
+            height: 200px;
+            /* position: absolute;
+            right: 0; */
+            float: right;
+            background: green;
+        }
+        .middle2{
+            flex-grow: 1;
+            /* width: 100%; */
+            margin: 0 200px;
+            height: 100%;
+        }
+        .content3{
+            width: 100%;
+            position: relative;
+            height: 200px;
+            /* display: flex; */
+            background: red;
+            /* padding: 0 200px; */
+        }
+        .left3{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 0;
+            /* float: left; */
+            background: blue;
+            
+        }
+        .right3{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            right: 0; 
+            /* float: right; */
+            background: green;
+        }
+        .middle3{
+            position: absolute;
+            left: 200px;
+            right:200px;
+            /* width: 100%; */
+            /* margin: 0 200px; */
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="left">
+            left
+        </div>
+        <div class="right">
+            right
+        </div>
+        <div class="middle">
+            middle
+        </div>
+    </div>
+    <div class="content2">
+            <div class="left2">
+                left
+            </div>
+            <div class="right2">
+                right
+            </div>
+            <div class="middle2">
+                middle
+            </div>
+        </div>
+        <div class="content3">
+                <div class="left3">
+                    left
+                </div>
+                <div class="right3">
+                    right
+                </div>
+                <div class="middle3">
+                    middle
+                </div>
+            </div>
+</body>
+</html>
