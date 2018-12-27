@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .active{
+        color:red;
+    }
+</style>
+<body>
+        <ul id="tabs">
+                <li data-tab="users">Users</li>
+                <li data-tab="groups">Groups</li>
+            </ul>
+            <div id="tabsContent">
+                <div data-tab="users">part1</div>
+                <div data-tab="groups">part2</div>
+            </div>
+            <!--  自定义事件设置 以下  -->
+                <div id="sel">
+                    <div>TEST</div>
+                </div>
+            <!--  自定义事件设置 以上  -->
+</body>
+<script src="./jquery-3.3.1.js"></script>
+<script>
+    $.fn.tabs=function(control){
+    var element=$(this);
+    control=$(control);
+    element.delegate("li","click",function(){
+        var tabName=$(this).attr("data-tab");
+         //点击li的时候触发change.tabs自定义事件  
+        element.trigger("change.tabs",tabName); 
+    });
+        
+    //给element绑定一个change.tabs自定义事件
+    element.bind("change.tabs",function(e,tabName){
+        element.find("li").removeClass("active");
+        element.find(">[data-tab='"+ tabName +"']").addClass("active");
+    });     
+    element.bind("change.tabs",function(e,tabName){
+        control.find(">[data-tab]").removeClass("active");
+        control.find(">[data-tab='"+ tabName +"']").addClass("active");
+    });
+    //激活第一个选项卡  
+    var firstName=element.find("li:first").attr("data-tab");
+    element.trigger("change.tabs",firstName);
+    return this;
+};
+$("ul#tabs").tabs("#tabsContent");
+console.log($('ul#tabs'));
+// -------------------------------------------------------------
+    $.fn.selfEvent = function(control){
+        var element=$(this);
+        control=$(control);
+        element.bind('selfEvent',function(e,tabName){
+            element.find('div').hasClass('active')?element.find('div').removeClass('active'):element.find('div').addClass('active');
+        })
+        element.delegate("div","click",function(){
+        element.trigger("selfEvent"); 
+    });
+    }
+    $("#sel").selfEvent("#tabsContent");
+</script>
+</html>
