@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #cvs{
+            background: black;
+        }
+    </style>
+</head>
+<body id="body">
+    <canvas id="cvs"></canvas>
+</body>
+<script src="./jquery-3.3.1.js"></script>
+<script>
+    let cvs = document.getElementById('cvs');
+    cvs.getContext('2d');
+    cvs.width = document.documentElement.clientWidth;
+    cvs.height = document.documentElement.clientHeight;
+</script>
+<script>
+var arr=[1,2,3,4,5];
+$.fn.selfEvent=function(){
+    element=$(this);
+    console.log(element);
+    element.bind('lengthChange',function(){
+        console.log('lengthChange');
+    });
+    element.on('hello',function(){
+        console.log('hello-callback');
+        
+    });
+    element.delegate('canvas','click',function(){
+        arr.splice(0,1);
+        console.log(arr);
+    });
+    element.bind('arrBack',function(){
+       console.log('world');
+    });
+    element.on('arrBack',function(){
+        arr=[1,2,3,4,5];
+        console.log(arr);
+    });
+}
+var arrTempLength = arr.length;
+setInterval(function () {
+    // console.log(arrTempLength);
+    // console.log(arr.length);
+    if(arr.length>0){
+        if(arr.length != arrTempLength){
+        arrTempLength = arr.length;
+        element.trigger('lengthChange');
+        }
+        }else{
+            console.log('no-data');
+            element.trigger('arrBack');
+        }
+},20);
+$('body#body').selfEvent();
+</script>
+</html>
