@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas{
+            background: black;
+        }
+        #blur{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+        <div id="content">
+                <!--模糊图片-->
+                <img id="blur" src="./011.jpg">
+                <!--使用canvas绘制图片-->
+                <canvas id="canvas"></canvas>
+                <!-- <a href="javascript:reset()" rel="external nofollow"  rel="external nofollow"  class="button" id="button-reset">reset</a>
+                <a href="javascript:show()" rel="external nofollow"  rel="external nofollow"  class="button" id="button-show">show</a> -->
+        </div>
+</body>
+<script src="../../jquery-3.3.1.js"></script>
+<script>
+        var canWidth = window.innerWidth-20;
+        var canHeight = window.innerHeight-20;
+        var canvas=document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        canvas.width = canWidth;
+        canvas.height = canHeight;
+        var img = new Image();
+        img.src = "./011.jpg";
+        leftMargin = (img.width - canvas.width)/2;
+        topMargin = (img.height - canvas.height)/2;
+        ctx.drawImage(img, Math.max(leftMargin,0), Math.max(topMargin,0),
+        Math.min(canvas.width,img.width), Math.min(canvas.height,img.height),
+        leftMargin < 0 ? -leftMargin : 0, topMargin < 0 ? -topMargin : 0,
+        Math.min(canvas.width,img.width),Math.min(canvas.height,img.height));
+</script>
+</html>
