@@ -7,32 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-            var dat=new Date();
-            var datt=dat.getDate();
-            console.log(datt);
-            // console.log(location.hash);
-            
-        function setCookie(key,value) {
-
-            
-            document.cookie = key+"="+value+'expires='+datt.toUTCString();
-        }
-        function getCookie(key) {
-            var str= document.cookie;
-            str.split('=');
-            // str.split(';');
-        }
-        function delCookie(key) {
-            // document.cookie="";
-            dat.setTime(dat.getTime -1);
-            var cval=getCookie(key);
-            if(cval!=null)
-            {
-                document.cookie=key+'='+cval+';expries='+datt.toUTCString();
-            }
-        }
-        // str.split('=');
-    </script>
+    hello
 </body>
+<script>
+var cookiesEnabled = document.cookie.indexOf("username=") != -1; 
+if(!cookiesEnabled) { 
+	//没有启用cookie 
+	alert("没有启用cookie ");
+} else{
+	//已经启用cookie 
+	alert("已经启用cookie ");
+}
+document.cookie="username=John Doe; expires=Thu, 18 Dec 2043 12:00:00 GMT;path=/";
+var x = document.cookie;
+var what = 'cookie';
+console.log(x,`hello ${document.cookie.indexOf("username=")}`);
+// (x);
+</script>
 </html>
