@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+</body>
+<script>
+    //init canvas
+    var canvas = document.getElementById('canvas');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    canvas.style.background = 'black';
+    var ctx = canvas.getContext('2d');
+    var raf;
+
+    //init ball
+    var ball = {
+        x:100,
+        y:100,
+        vx:5,
+        vy:2,
+        radius:25,
+        color:'blue',
+        draw: function () {
+            ctx.beginPath();
+            ctx.arc(this.x,this.y,this.radius,0,Math.PI * 2,true);
+            ctx.closePath();
+            ctx.fillStyle = this.color;
+            ctx.fill();
+        }
+    }
+    
+    window.onload = ()=>{
+        draw();
+        ball.draw();
+    }
+
+    //draw function
+    function draw(){
+        // ctx.clearRect(0,0,canvas.width,canvas.height);
+        ctx.fillStyle = 'rgba(0,0,0,0.3)';
+        ctx.fillRect(0,0,canvas.width,canvas.height);
+            if (ball.y + ball.vy > canvas.height || ball.y + ball.vy < 0) {
+            ball.vy = -ball.vy;
+            }
+            if (ball.x + ball.vx > canvas.width || ball.x + ball.vx < 0) {
+            ball.vx = -ball.vx;
+            }
+            ball.vy *= .99;
+            ball.vy += .25;
+        ball.draw();
+        ball.x += ball.vx;
+        ball.y += ball.vy;
+        raf = window.requestAnimationFrame(draw);
+    }
+
+
+
+</script>
+</html>
