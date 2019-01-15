@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div id="color">COLOR</div>
+</body>
+<script>
+    //init
+    var canvas = document.getElementById('canvas');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'rgba(0,0,0,1)';
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+
+    //start
+    var img = new Image();
+    img.src = 'http://localhost/CANVAS/027.jpg';
+    img.onload = function(){
+        ctx.drawImage(img,0,0);
+        img.style.display = 'none';
+    };
+    var color = document.getElementById('color');
+    function pick(event){
+        var x = event.layerX;
+        var y = event.layerY;
+        var pixel = ctx.getImageData(x,y,1,1);
+        var data = pixel.data;
+        var rgba = 'rbga(' + data[0] + ',' + data[1] + ',' + data[2] + ',' + data[3] / 255 + ')';
+        color.style.background = rgba;
+        color.textContent = rgba;
+    }
+    addEventListener('mousemove',pick);
+</script>
+</html>
