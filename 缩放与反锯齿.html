@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div role="checkbox" aria-checked="checked">111</div>
+</body>
+<script>
+    var canvas = document.getElementById("canvas");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    canvas.style.background = "black";
+    var ctx;
+    document.body.onload = ()=>{
+        ctx =canvas.getContext('2d');
+        ctx.fillStyle = 'yellow';
+        ctx.fillRect(0,0,100,200);
+    }
+
+    function draw(img){
+        ctx.drawImage(img,0,0);
+        img.style.display = "none";
+        var zoomctx = document.getElementById('zoom').getContext('2d');
+
+        var smoothbtn = document.getElementById('smoothbtn');
+        var toggleSmoothing = function(event){
+            zoomctx.imageSmoothingEnabled = this.checked;
+            zoomctx.mozImageSmoothingEnabled = this,checked;
+            zoomctx.webkitImageSmoothingEnabled = this.checked;
+            zoomctx.msImageSmoothingEnabled = this.checked;
+        };
+        var zoom = function(event){
+            var x = event.layerX;
+            var y = event.layerY;
+            smoothbtn.addEventListener('change',toggleSmoothing);
+            zoomctx.drawImage(canvas,Math.abs(x - 5),Math.abs(y - 5),10,10,0,0,200,200);
+        }
+        canvas.addEventListener('mousemove',zoom);
+    };
+</script>
+</html>
