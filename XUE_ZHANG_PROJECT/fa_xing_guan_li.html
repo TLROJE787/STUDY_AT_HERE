@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/web.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 背景 -->
+    <div class="container-fluid web-bg"></div>
+    <!-- 主导航 -->
+    <div class="controlHidden">
+            <ul id="tabbar" class="">
+                    <li><a href="./index.html">账号管理</a></li>
+                    <li><a href="./ren_yuan_guan_li.html">人员管理</a></li>
+                    <li><a href="./xuan_ti_guan_li.html">选题管理</a></li>
+                    <li><a href="./chou_gao_guan_li.html">稿酬管理</a></li>
+                    <li><a href="./he_tong_guan_li.html">合同管理</a></li>
+                    <li><a href="./fa_gao_guan_li.html">发稿管理</a></li>
+                    <li><a href="./yin_zhi_guan_li.html">印制管理</a></li>
+                    <li><a href="./fa_xing_guan_li.html">发行管理</a></li>
+                    <li><a href="./ku_cun_guan_li.html">库存管理</a></li>
+            </ul>
+    </div>
+    <!-- 详细导航 -->
+    <div class="isHidden">
+        <div id="tabber-detail" >
+    
+        </div>
+    </div>
+    <!-- 标题1 -->
+    <div class="header-container">
+        <h1 id="header" class="center">中小型出版社管理系统</h1>
+    </div>
+    <!-- 图片展示标题 -->
+    <div id="swaper" class="swaper">
+      <div id="show-img">
+          <!-- 标题2 -->
+          <div class="header-container">
+                <h1 id="header2" class="center">欢迎<small>当前为<span id="currentPageName">发行管理</span>页</small></h1>  
+        </div>
+      </div>
+      <div id="show-img2">
+
+      </div>
+      <div id="show-img3">
+
+      </div>
+    </div>
+    <!-- 主要内容 -->
+    <div style="width:100%;padding:0;background: #111111;color:#cabebe;margin-top:20rem; ">
+            <div class="row-fluid" >
+                    <div style="display: inline-block; margin-bottom: 10px;font-weight: 1000; text-align:center;width:5rem;height:5rem;border: 3px solid white; border-radius:50%; background:rgb(231, 185, 59);margin-top: 10px;">
+                            <span style="line-height:5rem;font-size: 2rem;color: #000;">发量</span>
+                    </div>
+                    <span style="color:#cabebe;">发行量管理</span>
+                    <!-- 书籍名称，作者，发行量 -->
+                            <div><span>书籍名称: </span><input type="text" style="display:inline-block;background: #cac4c4;margin-bottom: 10px;"></div>
+                            <div><span>作者: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="text" style="display:inline-block;background: #b3adad;margin-bottom: 10px;"></div>
+                            <div><span class="threeCharacter">发行量: </span><input type="text" style="display:inline-block;background: #b3adad;margin-bottom: 10px;"></div>
+                            <button class="button">添加</button>
+            </div>
+            <div class="row-fluid">
+                    <div style="display: inline-block; margin-bottom: 10px;font-weight: 1000; text-align:center;width:5rem;height:5rem;border: 3px solid white; border-radius:50%; background:rgb(231, 185, 59);margin-top: 10px;">
+                            <span style="line-height:5rem;font-size: 2rem;color: #000;">预售</span>
+                    </div>
+                    <span style="color:#cabebe;">预售书籍</span>
+                    <!-- 书籍名称，作者，发行量 -->
+                    <div><span>书籍名称: </span><input type="text" style="display:inline-block;background: #cac4c4;margin-bottom: 10px;"></div>
+                    <div><span>作者: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="text" style="display:inline-block;background: #b3adad;margin-bottom: 10px;"></div>
+                    <div><span class="threeCharacter">发行量: </span><input type="text" style="display:inline-block;background: #b3adad;margin-bottom: 10px;"></div>
+                    <button class="button">添加</button>
+    </div>
+            <div class="row-fluid">
+                    <div style="display: inline-block;margin:10px 0;font-weight: 1000; text-align:center;width:5rem;height:5rem;border: 3px solid white; border-radius:50%; background:rgb(231, 185, 59);">
+                            <span style="line-height:5rem;font-size: 2rem;color: #000;">发布</span>
+                    </div>
+                    <span style="color:#cabebe;">发布消息</span>
+                    <!-- 发布消息的功能 -->
+                    <div style="position:relative;">
+                        <div style="float:left;display: block;" class="clearfix">
+                            <canvas id="canvas" data-author-web="TLROJE777"  width="150px" height="50px"></canvas>   
+                                    <button class="button" onclick="changeCtx();">看不清换一个</button>
+                        </div>
+                            <div style="clear: both;position: relative;top: 6px;">
+                                <input type="text" name='forCanvas'><button class="button" onclick="queDing(this);">确定发布</button>        
+                            </div>
+                    </div>
+            </div>
+        <div class="row-fluid">
+                <div style="display: inline-block;margin:10px 0;font-weight: 1000; text-align:center;width:5rem;height:5rem;border: 3px solid white; border-radius:50%; background:rgb(231, 185, 59);">
+                        <span style="line-height:5rem;font-size: 2rem;color: #000;">销量</span>
+                </div>
+                <span style="color:#cabebe;">销量情况</span>
+                <!-- 添加书名，时间段，销售量 -->
+                        <div><span>书籍名称: </span><input type="text" style="display:inline-block;background: #cac4c4;margin-bottom: 10px;"></div>
+                        <div><span class="threeCharacter">时间段: </span><input type="text" style="display:inline-block;background: #b3adad;margin-bottom: 10px;"></div>
+                        <div><span class="threeCharacter">销售量: </span><input type="text" style="display:inline-block;background: #b3adad;margin-bottom: 10px;"></div>
+                        <button class="button">确认</button>
+        </div>
+        <div class="row-fluid">
+                <div style="display: inline-block;margin:10px 0;font-weight: 1000; text-align:center;width:5rem;height:5rem;border: 3px solid white; border-radius:50%; background:rgb(231, 185, 59);">
+                        <span style="line-height:5rem;font-size: 2rem;color: #000;">策略</span>
+                </div>
+                <span style="color:#cabebe;">促销策略管理</span>
+                <!-- 添加消息的功能 -->
+                        <div><span>添加消息: </span><textarea type="text" style="width: 521px;height: 220px;display:block;background: #b3adad;margin-bottom: 10px;"></textarea></textarea></div>
+                        <button style="color:#000;border-radius: .3rem .1rem;">确认添加</button>
+        </div>
+    </div>
+</div>
+<!-- 底部栏 -->
+<div id="footbar">
+    <h1 id="footer" class="center">人员管理系统</h1>
+</div>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+<script src="./objlist.js"></script>
+<script>
+        //生成随机数
+    function randomNum(min,max){
+        return Math.floor(Math.random()*(max-min)+min);
+    }
+        //生成随机颜色RGB分量
+    function randomColor(min,max){
+        var _r = randomNum(min,max);
+        var _g = randomNum(min,max);
+        var _b = randomNum(min,max);
+        return "rgb("+_r+","+_g+","+_b+")";
+    }
+    //先阻止画布默认点击发生的行为再执行drawPic()方法
+    document.getElementById("canvas").onclick = function(e){
+        e.preventDefault();
+        drawPic();
+    };
+    function drawPic(){
+        //获取到元素canvas
+        var $canvas = document.getElementById("canvas");
+        var _str = "0123456789";//设置随机数库
+        var _picTxt = "";//随机数
+        var _num = 4;//4个随机数字
+        var _width = $canvas.width;
+        var _height = $canvas.height;
+        var ctx = $canvas.getContext("2d");//获取 context 对象
+        ctx.textBaseline = "bottom";//文字上下对齐方式--底部对齐
+        ctx.fillStyle = randomColor(180,240);//填充画布颜色
+        ctx.fillRect(0,0,_width,_height);//填充矩形--画画
+        for(var i=0; i<_num; i++){
+            var x = (_width-10)/_num*i+10;
+            var y = randomNum(_height/2,_height);
+            var deg = randomNum(-45,45);
+            var txt = _str[randomNum(0,_str.length)];
+            _picTxt += txt;//获取一个随机数
+            ctx.fillStyle = randomColor(10,100);//填充随机颜色
+            ctx.font = randomNum(16,40)+"px SimHei";//设置随机数大小，字体为SimHei
+            ctx.translate(x,y);//将当前xy坐标作为原始坐标
+            ctx.rotate(deg*Math.PI/180);//旋转随机角度
+            ctx.fillText(txt, 0,0);//绘制填色的文本
+            ctx.rotate(-deg*Math.PI/180);
+            ctx.translate(-x,-y);
+        }
+        for(var i=0; i<_num; i++){
+            //定义笔触颜色
+            ctx.strokeStyle = randomColor(90,180);
+            ctx.beginPath();
+            //随机划线--4条路径
+            ctx.moveTo(randomNum(0,_width), randomNum(0,_height));
+            ctx.lineTo(randomNum(0,_width), randomNum(0,_height));
+            ctx.stroke();
+        }
+        for(var i=0; i<_num*10; i++){
+            ctx.fillStyle = randomColor(0,255);
+            ctx.beginPath();
+            //随机画原，填充颜色
+            ctx.arc(randomNum(0,_width),randomNum(0,_height), 1, 0, 2*Math.PI);
+            ctx.fill();
+        }
+        return _picTxt;//返回随机数字符串
+    }
+    var thisNum = drawPic();
+</script>
+<script>
+    //init
+    console.log(canvas);
+    var tabbar = document.getElementById('tabbar');
+    var para = document.createElement("div");
+    var tabberDetail = document.getElementById('tabber-detail');
+    let OtaD=document.getElementsByClassName('tabDis');
+    var footer = document.getElementById('footer'); 
+    var currentPageName = document.getElementById('currentPageName');
+
+    //tabbar factory
+    function factory(arr){
+    var HTML = '<ul id="detail-ul">';
+        HTML += `<li><a href="${arr[0].herf}">${arr[0].name}</a></li>`;
+        HTML += `<li><a href="${arr[1].herf}">${arr[1].name}</a></li>`;
+        HTML += `<li><a href="${arr[2].herf}">${arr[2].name}</a></li>`;
+        HTML += `<li><a href="${arr[3].herf}">${arr[3].name}</a></li>`;
+        HTML += `<li><a href="${arr[4].herf}">${arr[4].name}</a></li>`;
+        HTML += `<li><a href="${arr[5].herf}">${arr[5].name}</a></li>`;
+        HTML += `<li><a href="${arr[6].herf}">${arr[6].name}</a></li>`;
+        HTML += `<li><a href="${arr[7].herf}">${arr[7].name}</a></li>`;
+        HTML += `<li><a href="${arr[8].herf}">${arr[8].name}</a></li>`;
+    HTML += '</ul>';
+    tabberDetail.innerHTML += HTML;
+    }
+    //do factory
+    for(let i = 0;i<5;i++){
+        factory(rowList[i]);
+    }
+
+    //文字切换
+    function tabDis(id){
+        for(let i=0;i<3;i++){
+            OtaD[i].classList.replace('table-active','table-none');      
+        }
+        OtaD[id-1].classList.replace('table-none','table-active');
+    }
+
+    
+    //底部栏文字
+    function footbarText(){
+    footer.innerText = `${currentPageName.innerText}系统`;
+    }
+    //do 底部栏文字
+    footbarText();
+
+    //queDing(this)
+    function queDing(e){
+        console.log(e.previousSibling.value);
+        if(!e.previousSibling.value){
+            alert('输入内容不可为空');
+        }
+        if(isNaN(e.previousSibling.value)){
+            document.execCommand('undo');
+            alert('只可以输入数字');
+        }
+        if(thisNum == e.previousSibling.value){
+            
+            if (window.confirm("确认吗?")) {
+                alert('已发布');
+                thisNum = drawPic();
+                document.execCommand('undo');
+            } else {
+                alert('已返回');
+                thisNum = drawPic();
+                document.execCommand('undo');
+            }
+        }
+    }
+
+    //changeCtx()
+    function changeCtx(){
+        thisNum = drawPic();
+    }
+</script>
+</html>

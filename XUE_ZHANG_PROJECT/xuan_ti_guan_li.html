@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/web.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 背景 -->
+    <div class="container-fluid web-bg"></div>
+    <!-- 主导航 -->
+    <div class="controlHidden">
+            <ul id="tabbar" class="">
+                    <li><a href="./index.html">账号管理</a></li>
+                    <li><a href="./ren_yuan_guan_li.html">人员管理</a></li>
+                    <li><a href="./xuan_ti_guan_li.html">选题管理</a></li>
+                    <li><a href="./chou_gao_guan_li.html">稿酬管理</a></li>
+                    <li><a href="./he_tong_guan_li.html">合同管理</a></li>
+                    <li><a href="./fa_gao_guan_li.html">发稿管理</a></li>
+                    <li><a href="./yin_zhi_guan_li.html">印制管理</a></li>
+                    <li><a href="./fa_xing_guan_li.html">发行管理</a></li>
+                    <li><a href="./ku_cun_guan_li.html">库存管理</a></li>
+            </ul>
+    </div>
+    <!-- 详细导航 -->
+    <div class="isHidden">
+        <div id="tabber-detail" >
+    
+        </div>
+    </div>
+    <!-- 标题1 -->
+    <div class="header-container">
+        <h1 id="header" class="center">中小型出版社管理系统</h1>
+    </div>
+    <!-- 图片展示标题 -->
+    <div id="swaper" class="swaper">
+      <div id="show-img">
+          <!-- 标题2 -->
+          <div class="header-container">
+                  <h1 id="header2" class="center">欢迎<small>当前为<span id="currentPageName">选题管理</span>页</small></h1>  
+          </div>
+      </div>
+      <div id="show-img2">
+
+      </div>
+      <div id="show-img3">
+
+      </div>
+    </div>
+    <!-- 主要内容 -->
+    <div style="width:100%;padding:0;background: #111111;color:#cabebe;margin-top:20rem; ">
+            <div class="row-fluid" >
+                    <div style="display: inline-block; margin-bottom: 10px;font-weight: 1000; text-align:center;width:5rem;height:5rem;border: 3px solid white; border-radius:50%; background:rgb(231, 185, 59);margin-top: 10px;">
+                            <span style="line-height:5rem;font-size: 2rem;color: #000;">环节</span>
+                    </div>
+                    <!-- 后台 -->
+                    <ul id="huanJie_xuanTiList">
+                        <li>选题列表</li>
+                        <li>选题1</li>
+                        <li>选题2</li>
+                    </ul>
+                    <span style="color:#cabebe;">选题环节管理</span></br>
+                    <span>候选题目: <input type="text"> <button style="color:#000;border-radius: .3rem .1rem;">添加候选题目</button></span>
+            </div>
+            <div class="row-fluid">
+                    <div style="display: inline-block;margin:10px 0;font-weight: 1000; text-align:center;width:5rem;height:5rem;border: 3px solid white; border-radius:50%; background:rgb(231, 185, 59);">
+                            <span style="line-height:5rem;font-size: 2rem;color: #000;">策略</span>
+                    </div>
+                    <span style="color:#cabebe;">选题策略管理</span>
+                    <!-- 后台 -->
+                    <ul id="ceLue_xuanTiList">
+                        <li>选题列表</li>
+                        <li><input type="checkbox" name="xuanTi"><span>选题1</span><span style="margin-left:8rem;">当前票数：0</span></li>
+                        <li><input type="checkbox" name="xuanTi"><span>选题2</span><span style="margin-left:8rem;">当前票数：0</span></li>
+                    </ul>
+                    <div id="for-show">
+
+                    </div>
+                    <button class="button" id="begin_tou_piao">发起投票</button>
+            </div>
+            <div class="row-fluid">
+                <div style="display: inline-block;margin:10px 0;font-weight: 1000; text-align:center;width:5rem;height:5rem;border: 3px solid white; border-radius:50%; background:rgb(231, 185, 59);">
+                        <span style="line-height:5rem;font-size: 2rem;color: #000;">约稿</span>
+                </div>
+                <!-- 后台 -->
+                <span style="color:#cabebe;">约稿管理</span>
+                        <div><span>作者: </span><input type="text" style="display:inline-block;background: #cac4c4;margin-bottom: 10px;"></div>
+                        <div><span>手机号: </span><input type="text" style="display:inline-block;background: #b3adad;margin-bottom: 10px;"></div>
+                        <div><span>稿件内容: </span><input type="text" style="display:inline-block;background: #b3adad;margin-bottom: 10px;"></div>
+                <button class="button">添加约稿信息</button>
+            </div>
+    </div>
+<!-- 底部栏 -->
+<div id="footbar">
+    <h1 id="footer" class="center">人员管理系统</h1>
+</div>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+<script src="./objlist.js"></script>
+<script>
+    //init
+    var tabbar = document.getElementById('tabbar');
+    var para = document.createElement("div");
+    var tabberDetail = document.getElementById('tabber-detail');
+    let OtaD = document.getElementsByClassName('tabDis');
+    var footer = document.getElementById('footer'); 
+    var currentPageName = document.getElementById('currentPageName');
+
+    //tabbar factory
+    function factory(arr){
+    var HTML = '<ul id="detail-ul">';
+        HTML += `<li><a href="${arr[0].herf}">${arr[0].name}</a></li>`;
+        HTML += `<li><a href="${arr[1].herf}">${arr[1].name}</a></li>`;
+        HTML += `<li><a href="${arr[2].herf}">${arr[2].name}</a></li>`;
+        HTML += `<li><a href="${arr[3].herf}">${arr[3].name}</a></li>`;
+        HTML += `<li><a href="${arr[4].herf}">${arr[4].name}</a></li>`;
+        HTML += `<li><a href="${arr[5].herf}">${arr[5].name}</a></li>`;
+        HTML += `<li><a href="${arr[6].herf}">${arr[6].name}</a></li>`;
+        HTML += `<li><a href="${arr[7].herf}">${arr[7].name}</a></li>`;
+        HTML += `<li><a href="${arr[8].herf}">${arr[8].name}</a></li>`;
+    HTML += '</ul>';
+    tabberDetail.innerHTML += HTML;
+    }
+    //do factory
+    for(let i = 0;i<5;i++){
+        factory(rowList[i]);
+    }
+
+    //文字切换
+    function tabDis(id){
+        for(let i=0;i<3;i++){
+            OtaD[i].classList.replace('table-active','table-none');      
+        }
+        OtaD[id-1].classList.replace('table-none','table-active');
+    }
+    
+    //底部栏文字
+    function footbarText(){
+        footer.innerText = `${currentPageName.innerText}系统`;
+    }
+    //do 底部栏文字
+    footbarText();
+    
+    //More 
+
+    //选题策略已选内容
+    // ceLue_xuanTiList
+    function yiXuanContainer() {
+        //init
+        var forShow = document.getElementById('for-show');
+        var ceLue_xuanTiList = document.getElementById('ceLue_xuanTiList');
+        var first,rest,arr = [],arr2 = [];
+        [first, ...rest] = ceLue_xuanTiList.children;
+        var begin_tou_piao = document.getElementById('begin_tou_piao');
+        
+            //发起投票
+            begin_tou_piao.addEventListener('click',()=>{
+                // 后台
+                var span1;
+                var span2;
+                alert('发起成功');
+                for (let index = 0; index < rest.length; index++) {
+                    span1 = rest[index].children[0].nextSibling;
+                    span2 = rest[index].children[0].nextSibling.nextSibling;
+                    span2.innerText = `当前票数：${span1.obj.getVote()}`;
+                }
+            })
+
+
+            function yiXuan(e) {
+                    console.log(e.checked);
+                    if(e.checked){
+                        // e.nextSibling.prototype.votes = 0;
+                        // e.nextSibling.innerText += `当前票数：${++votes}`;
+                        arr.push(e.nextSibling.innerText);
+                        e.nextSibling.obj.addVote();
+                        console.log(e.nextSibling.obj.getVote());
+                        arr2.push(e);
+                        // console.log(arr);
+                        // console.log(arr2);
+                        forShow.innerText = arr.join(`\n`);
+                    }else{
+                        for (let index = 0; index < arr.length; index++) {
+                            if(arr[index] == e.nextSibling.innerText){
+                                arr.splice(index,1);
+                                e.nextSibling.obj.delVote();
+                                console.log(e.nextSibling.obj.getVote());
+                                arr2.splice(index,1);
+                                forShow.innerText = arr.join('---');
+                                break;
+                            }
+                        }
+                        
+                    }
+            }
+        // do 已选:初始化每一个选题对象，每个对象包含一个值--->当前投票数
+            for (let index = 0; index < rest.length; index++) {
+                rest[index].children[0].nextSibling.obj = {
+                        voteNum : 0,
+                        addVote: function addVote(){
+                            ++this.voteNum;
+                        },
+                        delVote: function delVote(){
+                            --this.voteNum;
+                        },
+                        getVote: function getVote(){
+                            return this.voteNum;
+                        },//后台获取数据->当前投票票数
+                        content:rest[index].children[0].nextSibling.innerText
+                    };
+                rest[index].children[0].addEventListener('click',(e)=>{
+                    yiXuan(e.path[0]);
+                });
+                console.log(rest[index].children[0].nextSibling.obj.getVote());
+            }
+    }
+    yiXuanContainer();
+    
+</script>
+</html>

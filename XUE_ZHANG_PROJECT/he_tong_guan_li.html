@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/web.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 背景 -->
+    <div class="container-fluid web-bg"></div>
+    <!-- 主导航 -->
+    <div class="controlHidden">
+            <ul id="tabbar" class="">
+                    <li><a href="./index.html">账号管理</a></li>
+                    <li><a href="./ren_yuan_guan_li.html">人员管理</a></li>
+                    <li><a href="./xuan_ti_guan_li.html">选题管理</a></li>
+                    <li><a href="./chou_gao_guan_li.html">稿酬管理</a></li>
+                    <li><a href="./he_tong_guan_li.html">合同管理</a></li>
+                    <li><a href="./fa_gao_guan_li.html">发稿管理</a></li>
+                    <li><a href="./yin_zhi_guan_li.html">印制管理</a></li>
+                    <li><a href="./fa_xing_guan_li.html">发行管理</a></li>
+                    <li><a href="./ku_cun_guan_li.html">库存管理</a></li>
+            </ul>
+    </div>
+    <!-- 详细导航 -->
+    <div class="isHidden">
+        <div id="tabber-detail" >
+    
+        </div>
+    </div>
+    <!-- 标题1 -->
+    <div class="header-container">
+        <h1 id="header" class="center">中小型出版社管理系统</h1>
+    </div>
+    <!-- 图片展示标题 -->
+    <div id="swaper" class="swaper">
+      <div id="show-img">
+          <!-- 标题2 -->
+          <div class="header-container">
+                <h1 id="header2" class="center">欢迎<small>当前为<span id="currentPageName">合同管理</span>页</small></h1>  
+        </div>
+      </div>
+      <div id="show-img2">
+
+      </div>
+      <div id="show-img3">
+
+      </div>
+    </div>
+    <!-- 主要内容 -->
+    <div style="width:100%;padding:0;background: #111111;color:#cabebe;margin-top:20rem; ">
+            <div class="row-fluid" >
+                    <div style="display: inline-block; margin-bottom: 10px;font-weight: 1000; text-align:center;width:5rem;height:5rem;border: 3px solid white; border-radius:50%; background:rgb(231, 185, 59);margin-top: 10px;">
+                            <span style="line-height:5rem;font-size: 2rem;color: #000;">模板</span>
+                    </div>
+                    <span style="color:#cabebe;">合同模板管理</span>
+                    <div>
+                        <div><span>定价: </span><input type="text" style="display:inline-block;background: #cac4c4;margin-bottom: 10px;"></div>
+                        <div><span>稿酬: </span><input type="text" style="display:inline-block;background: #b3adad;margin-bottom: 10px;"></div>
+                        <div><span>数量: </span><input type="text" style="display:inline-block;background: #b3adad;margin-bottom: 10px;"></div>
+                        <div><span>发行: </span><input type="text" style="display:inline-block;background: #b3adad;margin-bottom: 10px;"></div>
+                        <button class="button" onclick="saveCheck(this)">存储</button>
+                    </div>
+            </div>
+            <div class="row-fluid">
+                    <div style="display: inline-block;margin:10px 0;font-weight: 1000; text-align:center;width:5rem;height:5rem;border: 3px solid white; border-radius:50%; background:rgb(231, 185, 59);">
+                            <span style="line-height:5rem;font-size: 2rem;color: #000;">信息</span>
+                    </div>
+                    <span style="color:#cabebe;">合同信息管理</span>
+                    <div>
+                        <div><span>定价: </span><input type="text" style="display:inline-block;background: #cac4c4;margin-bottom: 10px;"></div>
+                        <div><span>稿酬: </span><input type="text" style="display:inline-block;background: #b3adad;margin-bottom: 10px;"></div>
+                        <div><span>数量: </span><input type="text" style="display:inline-block;background: #b3adad;margin-bottom: 10px;"></div>
+                        <div><span>发行: </span><input type="text" style="display:inline-block;background: #b3adad;margin-bottom: 10px;"></div>
+                        <button class="button" onclick="saveCheck(this)">填写完毕</button>
+                    </div>
+            </div>
+    </div>
+<!-- 底部栏 -->
+<div id="footbar">
+    <h1 id="footer" class="center">人员管理系统</h1>
+</div>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+<script src="./objlist.js"></script>
+<script>
+    //init
+    var tabbar = document.getElementById('tabbar');
+    var para = document.createElement("div");
+    var tabberDetail = document.getElementById('tabber-detail');
+    let OtaD=document.getElementsByClassName('tabDis');
+    var footer = document.getElementById('footer'); 
+    var currentPageName = document.getElementById('currentPageName');
+
+    //tabbar factory
+    function factory(arr){
+    var HTML = '<ul id="detail-ul">';
+        HTML += `<li><a href="${arr[0].herf}">${arr[0].name}</a></li>`;
+        HTML += `<li><a href="${arr[1].herf}">${arr[1].name}</a></li>`;
+        HTML += `<li><a href="${arr[2].herf}">${arr[2].name}</a></li>`;
+        HTML += `<li><a href="${arr[3].herf}">${arr[3].name}</a></li>`;
+        HTML += `<li><a href="${arr[4].herf}">${arr[4].name}</a></li>`;
+        HTML += `<li><a href="${arr[5].herf}">${arr[5].name}</a></li>`;
+        HTML += `<li><a href="${arr[6].herf}">${arr[6].name}</a></li>`;
+        HTML += `<li><a href="${arr[7].herf}">${arr[7].name}</a></li>`;
+        HTML += `<li><a href="${arr[8].herf}">${arr[8].name}</a></li>`;
+    HTML += '</ul>';
+    tabberDetail.innerHTML += HTML;
+    }
+    //do factory
+    for(let i = 0;i<5;i++){
+        factory(rowList[i]);
+    }
+
+    //文字切换
+    function tabDis(id){
+        for(let i=0;i<3;i++){
+            OtaD[i].classList.replace('table-active','table-none');      
+        }
+        OtaD[id-1].classList.replace('table-none','table-active');
+    }
+
+    
+    //底部栏文字
+    function footbarText(){
+    footer.innerText = `${currentPageName.innerText}系统`;
+    }
+    //do 底部栏文字
+    footbarText();
+
+    //存储检测
+    function saveCheck(e){
+        var inputList = e.parentNode.getElementsByTagName("input");
+        var Characters = Array.from(e.innerText);
+        console.log(e.innerText);
+        
+        for(value of inputList){
+            if(!value.value){
+                alert('信息输入不完全');
+                return ;
+            }
+        }
+        for (let index = 0; index < inputList.length - 1; index++) {
+            console.log(Number(inputList[index].value));
+            
+            if(isNaN(Number(inputList[index].value))){
+                alert('输入格式错误');
+                return ;
+            }
+        }
+        alert(Characters[0]+Characters[1]+'成功');
+    }
+</script>
+</html>
