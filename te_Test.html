@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var i = 5;
+    var str = 'xxy aay asg';
+    console.log(
+        res(str).join(' ')
+    );
+    function res(str){
+        var str2 ='';
+        var arr = str.split(/\s+/);
+        str2 = arr.map(function(item){
+            return item + i++;
+        })
+        return str2;
+    }
+</script>
+</html>
