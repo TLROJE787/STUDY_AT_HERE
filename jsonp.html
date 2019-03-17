@@ -16,5 +16,11 @@ var jsonp = function (callback){
     alert('wo de ma ya + callback:'+ callback.item);
 }
 jsonp({item:111});
+//script标签进行网络请求后发生的事情
+var jsonScript = document.getElementById('json');
+console.log();
+//验证成功，在source中发现获取的数据
+//经过以上步骤得出猜想：发出请求的标签内部会拥有返回值
+
 </script>
 </html>
